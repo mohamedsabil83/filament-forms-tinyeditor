@@ -1,24 +1,26 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "mohamedsabil83/filament-forms-tinyeditor",
+    "description": "A tinymce editor field for Filament forms",
     "keywords": [
-        ":vendor_name",
         "laravel",
-        ":package_slug"
+        "filament",
+        "forms",
+        "tinyeditor",
+        "tinymce"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/mohamedsabil83/filament-forms-tinyeditor",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "MohamedSabil83",
+            "email": "me@mohamedsabil83.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.0",
-        "spatie/laravel-package-tools": "^1.9.2",
-        "illuminate/contracts": "^8.73"
+        "illuminate/contracts": "^8.73",
+        "spatie/laravel-package-tools": "^1.9.2"
     },
     "require-dev": {
         "nunomaduro/collision": "^5.10",
@@ -34,13 +36,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Mohamedsabil83\\FilamentFormsTinyeditor\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Mohamedsabil83\\FilamentFormsTinyeditor\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -54,11 +55,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
-            }
+                "Mohamedsabil83\\FilamentFormsTinyeditor\\FilamentFormsTinyeditorServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
