@@ -17,15 +17,11 @@ You can install the package via composer:
 composer require mohamedsabil83/filament-forms-tinyeditor
 ```
 
-Next, you will need to add a `tinymce` configuration entry to your `config/services.php` configuration file as following:
+Next, publish the asset by run the following:
 
-```php
-'tinymce' => [
-    'key' => 'your-api-key-here',
-],
+```bash
+php artisan vendor:publish --tag="filament-forms-tinyeditor-assets"
 ```
-
-You can get a free key by visiting [TinyMce](https://www.tiny.cloud).
 
 ## Usage
 

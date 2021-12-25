@@ -12,6 +12,7 @@ class FilamentFormsTinyeditorServiceProvider extends PackageServiceProvider
         $package
             ->name('filament-forms-tinyeditor')
             ->hasViews()
+            ->hasAssets()
         ;
     }
 }

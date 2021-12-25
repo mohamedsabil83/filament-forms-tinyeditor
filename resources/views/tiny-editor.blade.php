@@ -83,9 +83,6 @@
 
 @once
     @push('scripts')
-        <script
-            src="https://cdn.tiny.cloud/1/{{ $tinyKey() }}/tinymce/5/tinymce.min.js"
-            referrerpolicy="origin"
-        ></script>
+        <script src="{{ asset("vendor/filament-forms-tinyeditor/tinymce/tinymce.min.js") }}"></script>
     @endpush
 @endonce
