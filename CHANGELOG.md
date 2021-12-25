@@ -10,6 +10,6 @@ All notable changes to `filament-forms-tinyeditor` will be documented in this fi
 
 **Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.0.0...v1.1.0
 
-## 1.0.0 - 202X-XX-XX
+## 1.0.0 - 2021-12-20
 
 - initial release
