@@ -37,6 +37,31 @@ To use a simple editor, you may use the `simple()` method:
 TinyEditor::make('content')->simple()
 ```
 
+## Toolbar customiziation
+
+You can add many editors with differnt toolbars for each of them. First, publish the configuration files:
+
+```bash
+php artisan vendor:publish --tag="filament-forms-tinyeditor-config"
+```
+
+Each profile looks like the following: (You can add as many you want):
+
+```php
+'simple' => [
+    'plugins' => 'directionality emoticons link wordcount',
+    'toolbar' => 'removeformat | bold italic | rtl ltr | link emoticons',
+],
+```
+
+Then, use each of the profile when adding editor:
+
+```php
+TinyEditor::make('content')->profile('your-profile-name')
+```
+
+For more information about available plugins and toolbar buttons, visit the related page on the [TinyMCE](https://www.tiny.cloud/docs/advanced/available-toolbar-buttons) site.
+
 ## Testing
 
 ```bash
