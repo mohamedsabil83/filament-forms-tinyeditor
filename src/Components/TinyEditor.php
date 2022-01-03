@@ -12,6 +12,12 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
 
     protected bool $isSimple = false;
 
+    protected string $plugins;
+
+    protected string $profile = 'default';
+
+    protected string $toolbar;
+
     protected string $language;
 
     protected string $view = 'filament-forms-tinyeditor::tiny-editor';
@@ -61,6 +67,38 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
     }
 
     /**
+     * Set the plugins according to profile.
+     *
+     * @return string
+     */
+    public function plugins(): string
+    {
+        if ($this->isSimple()) {
+            return 'directionality emoticons link wordcount';
+        }
+
+        if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins')) {
+            return config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins');
+        }
+
+        return 'advlist codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount';
+    }
+
+    /**
+     * Set the profile.
+     *
+     * @param string $profile
+     *
+     * @return static
+     */
+    public function profile(string $profile): static
+    {
+        $this->profile = $profile;
+
+        return $this;
+    }
+
+    /**
      * Pick the simple editor.
      *
      * @param bool|callable $condition
@@ -72,5 +110,23 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
         $this->isSimple = $condition;
 
         return $this;
+    }
+
+    /**
+     * Set the toolbar buttons according to profile.
+     *
+     * @return string
+     */
+    public function toolbar(): string
+    {
+        if ($this->isSimple()) {
+            return 'removeformat | bold italic | rtl ltr | link emoticons';
+        }
+
+        if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.toolbar')) {
+            return config('filament-forms-tinyeditor.profiles.'.$this->profile.'.toolbar');
+        }
+
+        return 'undo redo removeformat | formatselect fontsizeselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen';
     }
 }

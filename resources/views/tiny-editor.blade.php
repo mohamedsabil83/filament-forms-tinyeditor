@@ -16,13 +16,8 @@
                 themes: 'modern',
                 height: 200,
                 menubar: false,
-                plugins: [
-                '{{ $isSimple()
-                    ? 'advlist codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount'
-                    : 'advlist codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount'
-                }}'
-                ],
-                toolbar: '{{ $isSimple() ? 'removeformat | bold italic | rtl ltr | link emoticons' : 'undo redo removeformat | formatselect fontsizeselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen' }}',
+                plugins: ['{{ $plugins() }}'],
+                toolbar: '{{ $toolbar() }}',
                 toolbar_mode: 'sliding',
                 images_upload_handler: (blobInfo, success, failure, progress) => {
                     if (! blobInfo.blob()) return
