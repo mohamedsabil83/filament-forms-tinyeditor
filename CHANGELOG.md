@@ -2,6 +2,12 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.1.3 - 2022-01-07
+
+Added Finnish language file
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.1.2...v1.1.3
+
 ## Add language files - 2022-01-07
 
 This will let the label of toolbar buttons appear with selected language when using one of the available languages. e.g. `->language('ar')`
