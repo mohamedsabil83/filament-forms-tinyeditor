@@ -31,13 +31,19 @@ use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 TinyEditor::make('content')
 ```
 
-To use a simple editor, you may use the `simple()` method:
+## Customiziation
+
+There is some customization that can be applied to the editor.
+
+### **Simple editor**
+
+To use a predefined simple editor, you may use the `simple()` method:
 
 ```php
 TinyEditor::make('content')->simple()
 ```
 
-## Toolbar customiziation
+### **Toolbar**
 
 You can add many editors with differnt toolbars for each of them. First, publish the configuration files:
 
@@ -62,11 +68,15 @@ TinyEditor::make('content')->profile('your-profile-name')
 
 For more information about available plugins and toolbar buttons, visit the related page on the [TinyMCE](https://www.tiny.cloud/docs/advanced/available-toolbar-buttons) site.
 
-## Testing
+### **Localization**
 
-```bash
-composer test
+By default, toolbar button labels shown same as current laravel locale. To force editor to use a specific language, you can use tge `->language()` method:
+
+```php
+TinyEditor::make('content')->language('ar')
 ```
+
+You can found [here](https://github.com/mohamedsabil83/filament-forms-tinyeditor/tree/main/resources/dist/tinymce/langs) a list of all available languages.
 
 ## Changelog
 
@@ -82,8 +92,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [MohamedSabil83](https://github.com/mohamedsabil83)
-- [All Contributors](../../contributors)
+-   [MohamedSabil83](https://github.com/mohamedsabil83)
+-   [All Contributors](../../contributors)
 
 ## License
 
