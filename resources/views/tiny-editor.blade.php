@@ -12,12 +12,12 @@
         x-init="$nextTick(() => {
             tinymce.init({
                 target: $refs.tinymce,
-                language: '{{ $interfaceLanguage() }}',
+                language: '{{ $getInterfaceLanguage() }}',
                 themes: 'modern',
-                height: 200,
+                height: {{ $getHeight() }},
                 menubar: false,
-                plugins: ['{{ $plugins() }}'],
-                toolbar: '{{ $toolbar() }}',
+                plugins: ['{{ $getPlugins() }}'],
+                toolbar: '{{ $getToolbar() }}',
                 toolbar_mode: 'sliding',
                 images_upload_handler: (blobInfo, success, failure, progress) => {
                     if (! blobInfo.blob()) return
