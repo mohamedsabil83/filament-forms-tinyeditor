@@ -2,6 +2,12 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.1.5 - 2022-01-12
+
+Minor fix
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.1.4...v1.1.5
+
 ## v1.1.4 - 2022-01-12
 
 Ability to customize editor height
