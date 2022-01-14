@@ -2,6 +2,7 @@
 
 namespace Mohamedsabil83\FilamentFormsTinyeditor\Components;
 
+use Closure;
 use Filament\Forms\Components\Concerns;
 use Filament\Forms\Components\Contracts;
 use Filament\Forms\Components\Field;
@@ -11,6 +12,8 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
     use Concerns\HasFileAttachments;
 
     protected bool $isSimple = false;
+
+    protected bool $showMenuBar = false;
 
     protected int $height = 200;
 
@@ -45,6 +48,11 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
         }
 
         return 'advlist codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount';
+    }
+
+    public function getShowMenuBar(): bool
+    {
+        return $this->showMenuBar;
     }
 
     public function getToolbar(): string
@@ -82,6 +90,13 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
     public function profile(string $profile): static
     {
         $this->profile = $profile;
+
+        return $this;
+    }
+
+    public function showMenuBar(): static
+    {
+        $this->showMenuBar = true;
 
         return $this;
     }

@@ -68,6 +68,13 @@ TinyEditor::make('content')->profile('your-profile-name')
 
 For more information about available plugins and toolbar buttons, visit the related page on the [TinyMCE](https://www.tiny.cloud/docs/advanced/available-toolbar-buttons) site.
 
+### **Show menubar**
+
+```php
+TinyEditor::make('content')->showMenuBar()
+```
+
+To show the menubar of the editor, use the `->showMenuBar()` method:
 ### **Localization**
 
 By default, toolbar button labels shown same as current laravel locale. To force editor to use a specific language, you can use tge `->language()` method:

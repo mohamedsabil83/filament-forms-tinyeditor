@@ -15,7 +15,7 @@
                 language: '{{ $getInterfaceLanguage() }}',
                 themes: 'modern',
                 height: {{ $getHeight() }},
-                menubar: false,
+                menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
                 plugins: ['{{ $getPlugins() }}'],
                 toolbar: '{{ $getToolbar() }}',
                 toolbar_mode: 'sliding',
