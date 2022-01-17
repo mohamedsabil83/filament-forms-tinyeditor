@@ -2,6 +2,14 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.2.0 - 2022-01-17
+
+## What's Changed
+
+- Fix editor rendering within blocks by @mohamedsabil83 in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/2
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.1.6...v1.2.0
+
 ## v1.1.6 - 2022-01-14
 
 Ability to toggle display menubar
