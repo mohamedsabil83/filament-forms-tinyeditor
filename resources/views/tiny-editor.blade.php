@@ -14,6 +14,8 @@
                 target: $refs.tinymce,
                 language: '{{ $getInterfaceLanguage() }}',
                 themes: 'modern',
+                skin: 'custom',
+                content_css: 'custom',
                 height: {{ $getHeight() }},
                 menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
                 plugins: ['{{ $getPlugins() }}'],
