@@ -82,11 +82,12 @@ TinyEditor::make('content')->height(300)
 
 ### **Show menubar**
 
+To show the menubar of the editor, use the `->showMenuBar()` method:
+
 ```php
 TinyEditor::make('content')->showMenuBar()
 ```
 
-To show the menubar of the editor, use the `->showMenuBar()` method:
 ### **Localization**
 
 By default, toolbar button labels shown same as current laravel locale. To force editor to use a specific language, you can use tge `->language()` method:
