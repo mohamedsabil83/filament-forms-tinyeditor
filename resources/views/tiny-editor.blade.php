@@ -16,7 +16,7 @@
                 themes: 'modern',
                 skin: 'custom',
                 content_css: 'custom',
-                height: {{ $getHeight() }},
+                max_height: {{ $getHeight() }},
                 menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
                 plugins: ['{{ $getPlugins() }}'],
                 toolbar: '{{ $getToolbar() }}',

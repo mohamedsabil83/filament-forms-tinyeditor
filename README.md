@@ -68,6 +68,14 @@ TinyEditor::make('content')->profile('your-profile-name')
 
 For more information about available plugins and toolbar buttons, visit the related page on the [TinyMCE](https://www.tiny.cloud/docs/advanced/available-toolbar-buttons) site.
 
+### **Editor Height**
+
+By default, the editor will automatically resizes to match the content inside it. If you need to control the height of the editor you can use `->height(int)` method to set the **maximum height**.
+
+```php
+TinyEditor::make('content')->height(300)
+```
+
 ### **Show menubar**
 
 ```php

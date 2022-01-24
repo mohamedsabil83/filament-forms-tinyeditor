@@ -14,7 +14,7 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
 
     protected bool $showMenuBar = false;
 
-    protected int $height = 200;
+    protected int $height = 0;
 
     protected string $plugins;
 
