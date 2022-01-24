@@ -39,7 +39,7 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
     public function getPlugins(): string
     {
         if ($this->isSimple()) {
-            return 'directionality emoticons link wordcount';
+            return 'autoresize directionality emoticons link wordcount';
         }
 
         if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins')) {
