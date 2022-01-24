@@ -23,7 +23,13 @@ class FilamentFormsTinyeditorServiceProvider extends PackageServiceProvider
         parent::boot();
 
         if (class_exists(\Filament\FilamentServiceProvider::class)) {
+            /*
+             * Next lines used to register the tiny scripts when use Filament admin.
+             *
+             * @phpstan-ignore-next-line
+             */
             Filament::serving(function () {
+                // @phpstan-ignore-next-line
                 Filament::registerScripts($this->getScripts());
             });
         }
