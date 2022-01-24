@@ -14,11 +14,14 @@
                 target: $refs.tinymce,
                 language: '{{ $getInterfaceLanguage() }}',
                 themes: 'modern',
+                skin: 'custom',
+                content_css: 'custom',
                 max_height: {{ $getHeight() }},
                 menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
                 plugins: ['{{ $getPlugins() }}'],
                 toolbar: '{{ $getToolbar() }}',
                 toolbar_mode: 'sliding',
+                branding: false,
                 images_upload_handler: (blobInfo, success, failure, progress) => {
                     if (! blobInfo.blob()) return
 
