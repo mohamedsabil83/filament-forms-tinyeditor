@@ -9,6 +9,8 @@
 
 Filament Forms TinyEditor is a package for [Laravel Filament](https://github.com/laravel-filament/filament) that wraps [TinyMce Editor](https://www.tiny.cloud) into a usable component. It's works with [Filament Forms](https://filamentadmin.com/docs/2.x/forms/installation) standalone too.
 
+![Editor example](./art/editor.png)
+
 ## Installation
 
 You can install the package via composer:
