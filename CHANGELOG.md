@@ -2,6 +2,12 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.3.1 - 2022-01-24
+
+Minor fix
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.3.0...v1.3.1
+
 ## v1.3.0 - 2022-01-24
 
 ## What's Changed
