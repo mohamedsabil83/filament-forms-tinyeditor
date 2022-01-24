@@ -23,7 +23,7 @@ Next, publish the asset by run the following:
 php artisan vendor:publish --tag="filament-forms-tinyeditor-assets"
 ```
 
-> **Sometimes, you may need to re-publish the assets after the upgrade.**
+> **Sometimes, you may need to re-publish the assets after upgrading.**
 
 ## Usage
 
