@@ -2,6 +2,12 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.4.0 - 2022-02-08
+
+Support Laravel 9
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.3.1...v1.4.0
+
 ## v1.3.1 - 2022-01-24
 
 Minor fix
