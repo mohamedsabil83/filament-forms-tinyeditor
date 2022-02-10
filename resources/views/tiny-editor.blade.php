@@ -15,9 +15,12 @@
                 language: '{{ $getInterfaceLanguage() }}',
                 themes: 'modern',
                 skin: 'custom',
-                content_css: 'custom',
+                content_css: ['custom', 'matheditor'],
                 max_height: {{ $getHeight() }},
                 menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
+                external_plugins: {
+                    'mathEditor': 'plugins/matheditor/plugin.min.js',
+                },
                 plugins: ['{{ $getPlugins() }}'],
                 toolbar: '{{ $getToolbar() }}',
                 toolbar_mode: 'sliding',

@@ -1,0 +1,508 @@
+﻿<html>
+
+<head>
+    <title>Math Editor</title>
+
+    <link href="./css/math.css" rel="stylesheet" />
+    <link href="js/jquery-easyui/themes/default/easyui.css" rel="stylesheet" />
+    <link href="js/jquery-easyui/themes/icon.css" rel="stylesheet" />
+</head>
+
+<body class="easyui-layout">
+    <div data-options="region:'south'" style="text-align:right; padding: 5px 5px 0px 0px; height:35px; background-color:#f3f3f3">
+        <a class="easyui-linkbutton" title="Insert Formula" data-options="iconCls:'icon-ok',plain:'true'" href="javascript:void(0)"
+        onclick="javascript:MathEditor.insertEditor();">Ok</a>
+        <a class="easyui-linkbutton" title="Cancel Editor" data-options="iconCls:'icon-cancel',plain:'true'" href="javascript:void(0)"
+        onclick="javascript:MathEditor.close();">Cancel</a>
+    </div>
+    <div class="easyui-layout" data-options="region:'center'">
+        <div data-options="region:'center'" id="editable-math" class="mathquill-editable"></div>
+        <div data-options="region:'east',title:'Math Palette',collapsible: true,iconCls:'icon-square_root', border:true" style="width:200px;">
+            <div id="aaFormulas" class="easyui-accordion" data-options="border: false, fit: true">
+                <div title="<span>General</span>" data-options="border: false" style="overflow:auto;padding:10px" id="GENERAL">
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -144px -29px"
+                    onclick="MathEditor.insert('\\lparen{} ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -173px -29px"
+                    onclick="MathEditor.insert('\\lbrack{} ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -202px -0px"
+                    onclick="MathEditor.insert('\\lbrace{} ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -173px -0px"
+                    onclick="MathEditor.insert('\\lpipe{} ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -86px -29px"
+                    onclick="MathEditor.insert('\\mathrm{}^{} ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -115px -29px"
+                    onclick="MathEditor.insert('\\mathrm{}_{} ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: 1px 0px"
+                    onclick="MathEditor.insert('\\frac{}{} ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -26px -31px"
+                    onclick="MathEditor.insert('\\sqrt{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -55px -31px"
+                    onclick="MathEditor.insert('\\nthroot{}{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -202px -29px"
+                    onclick="MathEditor.insert('+');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -231px -36px"
+                    onclick="MathEditor.insert('\\slash');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -231px 0px"
+                    onclick="MathEditor.insert('\\times');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -249px 0px"
+                    onclick="MathEditor.insert('\\pm');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -231px -18px"
+                    onclick="MathEditor.insert('-');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -249px -18px"
+                    onclick="MathEditor.insert('\\div');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -465px -36px"
+                    onclick="MathEditor.insert('\\cdot');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -465px -18px"
+                    onclick="MathEditor.insert('\\ast');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -483px -18px"
+                    onclick="MathEditor.insert('\\ring');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -753px -37px"
+                    onclick="MathEditor.insert('>');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -789px -37px"
+                    onclick="MathEditor.insert('<');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -249px -36px"
+                    onclick="MathEditor.insert('\\ge');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -267px -18px"
+                    onclick="MathEditor.insert('\\le');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -591px -18px"
+                    onclick="MathEditor.insert('=');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -555px -18px"
+                    onclick="MathEditor.insert('\\ne');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -933px -36px"
+                    onclick="MathEditor.insert('\\in');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -951px -18px"
+                    onclick="MathEditor.insert('\\ni');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -825px -36px"
+                    onclick="MathEditor.insert('\\notin');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -969px -36px"
+                    onclick="MathEditor.insert('\\sub');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -987px -18px"
+                    onclick="MathEditor.insert('\\sup');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -861px 0px"
+                    onclick="MathEditor.insert('\\subeq');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -861px -36px"
+                    onclick="MathEditor.insert('\\supeq');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -969px 0px"
+                    onclick="MathEditor.insert('\\union');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -969px -18px"
+                    onclick="MathEditor.insert('\\intersection');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -320px 0px"
+                    onclick="MathEditor.insert('\\emptyset');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -501px 0px"
+                    onclick="MathEditor.insert('\\pi');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -518px 0px"
+                    onclick="MathEditor.insert('\\partial');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -537px -18px"
+                    onclick="MathEditor.insert('\\degree');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -501px -18px"
+                    onclick="MathEditor.insert('\\infinity');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -518px -36px"
+                    onclick="MathEditor.insert('\\triangle');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -537px -36px"
+                    onclick="MathEditor.insert('\'');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1770px -18px"
+                    onclick="MathEditor.insert('\\epsilon');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -537px 0px"
+                    onclick="MathEditor.insert('\\nabla');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -555px 0px;"
+                    onclick="MathEditor.insert('\'\'');"></button>
+                </div>
+                <div title="<span>Symbols</span>" data-options="border: false" style="overflow:auto;padding:10px" id="SYMBOLS">
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2112px 0px"
+                    onclick="MathEditor.insert('\\N');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2130px 0px"
+                    onclick="MathEditor.insert('\\Z');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2112px -18px"
+                    onclick="MathEditor.insert('\\Q');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2130px -18px"
+                    onclick="MathEditor.insert('\\C');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2112px -36px"
+                    onclick="MathEditor.insert('\\R');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2130px -36px"
+                    onclick="MathEditor.insert('\\P');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2058px -36px"
+                    onclick="MathEditor.insert('\\real');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2058px -18px"
+                    onclick="MathEditor.insert('\\imaginary');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2076px -18px"
+                    onclick="MathEditor.insert('\\aleph');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1023px -18px"
+                    onclick="MathEditor.insert('\\and');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1023px -36px"
+                    onclick="MathEditor.insert('\\or');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1041px 0px"
+                    onclick="MathEditor.insert('\\not');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1041px -18px"
+                    onclick="MathEditor.insert('\\forall');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1041px -36px"
+                    onclick="MathEditor.insert('\\exist');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1061px -18px"
+                    onclick="MathEditor.insert('\\nexists');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1005px 0px"
+                    onclick="MathEditor.insert('\\therefore');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1005px -18px"
+                    onclick="MathEditor.insert('\\because');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1113px -18px"
+                    onclick="MathEditor.insert('\\angle');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1097px -19px"
+                    onclick="MathEditor.insert('\\sphericalangle');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1079px -38px"
+                    onclick="MathEditor.insert('\\measuredangle');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1131px 0px"
+                    onclick="MathEditor.insert('\\parallel');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1131px -18px"
+                    onclick="MathEditor.insert('\\perp');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -591px -18px"
+                    onclick="MathEditor.insert('=');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -555px -18px"
+                    onclick="MathEditor.insert('\\neq ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -627px 0px"
+                    onclick="MathEditor.insert('\\equiv');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -574px -1px"
+                    onclick="MathEditor.insert('\\not\equiv');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -591px -36px"
+                    onclick="MathEditor.insert('\\sim');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -592px -1px"
+                    onclick="MathEditor.insert('\\not\sim');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -627px -18px"
+                    onclick="MathEditor.insert('\\asymp');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -609px -18px"
+                    onclick="MathEditor.insert('\\simeq');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -645px 0px"
+                    onclick="MathEditor.insert('\\cong');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -646px -38px"
+                    onclick="MathEditor.insert('\\lneq');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -753px -36px"
+                    onclick="MathEditor.insert('>');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -681px -36px"
+                    onclick="MathEditor.insert('\\gg');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -717px -36px"
+                    onclick="MathEditor.insert('\\succ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -664px -18px"
+                    onclick="MathEditor.insert('\\gneq');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -789px -36px"
+                    onclick="MathEditor.insert('<');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -681px 0px"
+                    onclick="MathEditor.insert('\\ll');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -717px 0px"
+                    onclick="MathEditor.insert('\\prec');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -699px -18px"
+                    onclick="MathEditor.insert('\\prop');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1149px -36px"
+                    onclick="MathEditor.insert('\\bigcirc');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1149px -18px"
+                    onclick="MathEditor.insert('\\bigtriangleup');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1115px 0px"
+                    onclick="MathEditor.insert('\\diamond');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1188px -18px"
+                    onclick="MathEditor.insert('\\oplus');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1167px 0px"
+                    onclick="MathEditor.insert('\\ominus');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1185px -36px"
+                    onclick="MathEditor.insert('\\otimes');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1203px 0px"
+                    onclick="MathEditor.insert('\\odot');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1185px 0px"
+                    onclick="MathEditor.insert('\\bullet');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -879px -18px"
+                    onclick="MathEditor.insert('\\sqsubset');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -897px 0px"
+                    onclick="MathEditor.insert('\\sqsupset');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -897px -36px"
+                    onclick="MathEditor.insert('\\sqsubseteq');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -915px -18px"
+                    onclick="MathEditor.insert('\\sqsupseteq');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -933px 0px"
+                    onclick="MathEditor.insert('\\sqcap');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -933px -18px"
+                    onclick="MathEditor.insert('\\sqcup');"></button>
+
+                </div>
+                <div title="<span>Arrows</span>" style="overflow:auto;" id="ARROWS">
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1383px -36px"
+                    onclick="MathEditor.insert('\\longleftarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1401px 0px"
+                    onclick="MathEditor.insert('\\longrightarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1401px -18px"
+                    onclick="MathEditor.insert('\\longleftrightarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1257px 0px"
+                    onclick="MathEditor.insert('\\uparrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1257px -18px"
+                    onclick="MathEditor.insert('\\downarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1257px -36px"
+                    onclick="MathEditor.insert('\\updownarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1221px -36px"
+                    onclick="MathEditor.insert('\\nwarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1203px -18px"
+                    onclick="MathEditor.insert('\\nearrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1401px -36px"
+                    onclick="MathEditor.insert('\\Longleftarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1419px 0px"
+                    onclick="MathEditor.insert('\\Longrightarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1419px -18px"
+                    onclick="MathEditor.insert('\\Longleftrightarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1275px 0px"
+                    onclick="MathEditor.insert('\\Uparrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1275px -18px"
+                    onclick="MathEditor.insert('\\Downarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1275px -36px"
+                    onclick="MathEditor.insert('\\Updownarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1239px 0px"
+                    onclick="MathEditor.insert('\\swarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1203px -36px"
+                    onclick="MathEditor.insert('\\searrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1221px 0px"
+                    onclick="MathEditor.insert('\\hookleftarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1221px -18px"
+                    onclick="MathEditor.insert('\\hookrightarrow');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1239px -18px"
+                    onclick="MathEditor.insert('\\leftharpoonup');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1239px -36px"
+                    onclick="MathEditor.insert('\\rightharpoonup');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1295px -2px"
+                    onclick="MathEditor.insert('\\rightbarharpoon');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1294px -19px"
+                    onclick="MathEditor.insert('\\leftbarharpoon');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1296px -37px"
+                    onclick="MathEditor.insert('\\dlsh');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1420px -36px"
+                    onclick="MathEditor.insert('\\leftmapsto');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1437px 0px"
+                    onclick="MathEditor.insert('\\mapsto');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -1665px 0px"
+                    onclick="MathEditor.insert('\\vech{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -1694px 0px"
+                    onclick="MathEditor.insert('\\veclr{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -1665px -29px"
+                    onclick="MathEditor.insert('\\vec{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -1723px 0px"
+                    onclick="MathEditor.insert('\\bar{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2429px -30px"
+                    onclick="MathEditor.insert('\\cdots ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2429px -24px"
+                    onclick="MathEditor.insert('\\dots ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2458px -31px"
+                    onclick="MathEditor.insert('\\ddots ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2488px -31px"
+                    onclick="MathEditor.insert('\\upslopeellipsis ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2429px -2px"
+                    onclick="MathEditor.insert('\\vdots ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -3039px 1px"
+                    onclick="MathEditor.insert('\\hat{}');"></button>
+
+                </div>
+                <div title="<span>Greek</span>" style="overflow:auto;" id="GREEK">
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1753px 0px"
+                    onclick="MathEditor.insert('\\alpha');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1752px -18px"
+                    onclick="MathEditor.insert('\\beta');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1752px -36px"
+                    onclick="MathEditor.insert('\\gamma');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1770px 0px"
+                    onclick="MathEditor.insert('\\delta');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1770px -18px"
+                    onclick="MathEditor.insert('\\epsilon');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1770px -36px"
+                    onclick="MathEditor.insert('\\zeta');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1788px 0px"
+                    onclick="MathEditor.insert('\\eta');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1788px -18px"
+                    onclick="MathEditor.insert('\\theta');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1806px 0px"
+                    onclick="MathEditor.insert('\\iota');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1806px -18px"
+                    onclick="MathEditor.insert('\\kappa');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1806px -36px"
+                    onclick="MathEditor.insert('\\lambda');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1824px 0px"
+                    onclick="MathEditor.insert('\\mu');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1824px -18px"
+                    onclick="MathEditor.insert('\\nu');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1824px -36px"
+                    onclick="MathEditor.insert('\\xi');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1842px 0px"
+                    onclick="MathEditor.insert('\\omicron');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1842px -18px"
+                    onclick="MathEditor.insert('\\pi');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1861px 0px"
+                    onclick="MathEditor.insert('\\rho');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1861px -36px"
+                    onclick="MathEditor.insert('\\sigma');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1878px 0px"
+                    onclick="MathEditor.insert('\\tau');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1878px -18px"
+                    onclick="MathEditor.insert('\\upsilon');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1878px -36px"
+                    onclick="MathEditor.insert('\\phi');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1896px -18px"
+                    onclick="MathEditor.insert('\\chi');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1896px -36px"
+                    onclick="MathEditor.insert('\\psi');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1914px 0px"
+                    onclick="MathEditor.insert('\\omega');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1914px -18px"
+                    onclick="MathEditor.insert('\\Alpha');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1914px -36px"
+                    onclick="MathEditor.insert('\\Beta');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1932px 0px"
+                    onclick="MathEditor.insert('\\Gamma');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1932px -18px"
+                    onclick="MathEditor.insert('\\Delta');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1932px -36px"
+                    onclick="MathEditor.insert('\\Epsilon');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1950px 0px"
+                    onclick="MathEditor.insert('\\Zeta');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1950px -18px"
+                    onclick="MathEditor.insert('\\Eta');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1950px -36px"
+                    onclick="MathEditor.insert('\\Theta');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1968px 0px"
+                    onclick="MathEditor.insert('\\Iota');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1968px -18px"
+                    onclick="MathEditor.insert('\\Kappa');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1968px -36px"
+                    onclick="MathEditor.insert('\\Lambda');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1986px 0px"
+                    onclick="MathEditor.insert('\\Mu');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1986px -18px"
+                    onclick="MathEditor.insert('\\Nu');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -1986px -36px"
+                    onclick="MathEditor.insert('\\Xi');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2003px 0px"
+                    onclick="MathEditor.insert('\\Omicron');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2003px -18px"
+                    onclick="MathEditor.insert('\\Pi');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2003px -36px"
+                    onclick="MathEditor.insert('\\Rho');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2022px 0px"
+                    onclick="MathEditor.insert('\\Sigma');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2022px -18px"
+                    onclick="MathEditor.insert('\\Tau');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2022px -36px"
+                    onclick="MathEditor.insert('\\Upsilon');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2040px 0px"
+                    onclick="MathEditor.insert('\\Phi');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2040px -18px"
+                    onclick="MathEditor.insert('\\Chi');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2040px -36px"
+                    onclick="MathEditor.insert('\\Psi');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 19px; height: 19px; background-image: url('../img/icons.png'); background-position: -2058px 0px"
+                    onclick="MathEditor.insert('\\Omega');"></button>
+                </div>
+                <div title="<span>Calculus</span>" style="overflow:auto;" id="CALCULUS">
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4329px -32px"
+                    onclick="MathEditor.insert('\\int ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4386px -32px"
+                    onclick="MathEditor.insert('\\iint ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4272px -32px"
+                    onclick="MathEditor.insert('\\iiint ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4301px -33px"
+                    onclick="MathEditor.insert('\\volintegral ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -3891px 0px"
+                    onclick="MathEditor.insert('\\int_{}^{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -3949px 0px"
+                    onclick="MathEditor.insert('\\int_{}^{}\\mathrm{}\\mathrm{d}\\mathrm{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -3920px 0px"
+                    onclick="MathEditor.insert('\\int_{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -3980px -0px"
+                    onclick="MathEditor.insert('\\int_{}\\mathrm{}\\mathrm{d}\\mathrm{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4009px 0px"
+                    onclick="MathEditor.insert('\\mathrm{d}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4064px 0px"
+                    onclick="MathEditor.insert('\\frac{\\mathrm{d}\\mathrm{}}{\\mathrm{d}\\mathrm{}}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4038px 0px"
+                    onclick="MathEditor.insert('\\partial');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4093px 1px"
+                    onclick="MathEditor.insert('\\frac{\\partial\\mathrm{}}{\\partial\\mathrm{}}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4124px 0px"
+                    onclick="MathEditor.insert('\\contentdown{\\lim}{\\mathit{}\\rightarrow\\infinity}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4153px 0px"
+                    onclick="MathEditor.insert('\\contentdown{\\lim}{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4588px -2px"
+                    onclick="MathEditor.insert('\\sin');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4589px -31px"
+                    onclick="MathEditor.insert('\\cos');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4616px -2px"
+                    onclick="MathEditor.insert('\\tan');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4615px -31px"
+                    onclick="MathEditor.insert('\\log');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4645px -2px"
+                    onclick="MathEditor.insert('\\log_{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4442px -31px"
+                    onclick="MathEditor.insert('\\csc');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4471px -2px"
+                    onclick="MathEditor.insert('\\sec');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4471px -31px"
+                    onclick="MathEditor.insert('\\cot');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4676px -2px"
+                    onclick="MathEditor.insert('\\ln');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -3836px 0px"
+                    onclick="MathEditor.insert('\\sum');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -3546px -29px"
+                    onclick="MathEditor.insert('\\contentupdown{\\sum}{}{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -3807px 0px"
+                    onclick="MathEditor.insert('\\prod');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -3662px -29px"
+                    onclick="MathEditor.insert('\\contentupdown{\\prod}{}{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -3723px -2px"
+                    onclick="MathEditor.insert('\\prod_{}^{}');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4357px -33px"
+                    onclick="MathEditor.insert('\\oint{} ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -4416px -33px"
+                    onclick="MathEditor.insert('\\surfintegral ');"></button>
+                </div>
+                <div title="<span>Matrices</span>" style="overflow:auto;">
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2168px -2px"
+                    onclick="MathEditor.openMatrixWindow();"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2197px -1px"
+                    onclick="MathEditor.insert('\\left| \\begin{array}{cc} \\mathrm{} & \\mathrm{} \\\\ \\mathrm{} & \\mathrm{} \\end{array} \\right|');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2226px -2px"
+                    onclick="MathEditor.insert('\\begin{array}{c} \\mathrm{} \\\\ \\mathrm{} \\\\ \\mathrm{} \\end{array} ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2226px -31px"
+                    onclick="MathEditor.insert('\\begin{array}{ccc} \\mathrm{} & \\mathrm{} & \\mathrm{} \\end{array} ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2429px -30px"
+                    onclick="MathEditor.insert('\\cdots ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2429px -24px"
+                    onclick="MathEditor.insert('\\dots ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2458px -31px"
+                    onclick="MathEditor.insert('\\ddots ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2488px -31px"
+                    onclick="MathEditor.insert('\\upslopeellipsis ');"></button>
+                    <button class="mathquill-symbol-btn" style="width: 29px; height: 29px; background-image: url('../img/icons.png'); background-position: -2429px -2px"
+                    onclick="MathEditor.insert('\\vdots ');"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wnMatrix">
+        <div class="easyui-layout" data-options="fit:true">
+            <div data-options="region:'center',fit:true">
+                <table>
+                    <tr>
+                        <td>Rows:</td>
+                        <td>
+                            <input id="ssRows" class="easyui-numberspinner" style="width:100px;" required="required" data-options="value:3,min:1,max:10,editable:false">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Columns:</td>
+                        <td>
+                            <input id="ssColumns" class="easyui-numberspinner" style="width:100px;" required="required" data-options="value:3,min:1,max:10,editable:false">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div data-options="region:'south'" style="text-align:right; padding: 5px 5px 0px 0px; height:35px; background-color:#f3f3f3">
+                <a class="easyui-linkbutton" title="Insert Matrix" data-options="iconCls:'icon-ok',plain:'true'" href="javascript:void(0)"
+                onclick="javascript:MathEditor.insertMatrix();">Ok</a>
+                <a class="easyui-linkbutton" title="Cancel" data-options="iconCls:'icon-cancel',plain:'true'" href="javascript:void(0)" onclick="javascript:MathEditor.closeMatrixWindow();">Cancel</a>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-easyui/jquery.min.js"></script>
+    <script src="js/jquery-easyui/jquery.easyui.min.js"></script>
+    <script src="js/mathquill.min.js"></script>
+    <script src="js/MathEditor.js"></script>  
+</body>
+
+</html>

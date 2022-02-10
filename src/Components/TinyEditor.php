@@ -12,6 +12,8 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
 
     protected bool $isSimple = false;
 
+    protected bool $enabledMathEditor = false;
+
     protected bool $showMenuBar = false;
 
     protected int $height = 0;
@@ -38,15 +40,17 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
 
     public function getPlugins(): string
     {
+        $mathEditor = $this->enabledMathEditor ? ' matheditor' : '';
+
         if ($this->isSimple()) {
-            return 'autoresize directionality emoticons link wordcount';
+            return 'autoresize directionality emoticons link wordcount' . $mathEditor;
         }
 
         if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins')) {
-            return config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins');
+            return config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins') . $mathEditor;
         }
 
-        return 'advlist codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount';
+        return 'advlist codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount' . $mathEditor;
     }
 
     public function getShowMenuBar(): bool
@@ -56,15 +60,16 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
 
     public function getToolbar(): string
     {
+        $mathEditor = $this->enabledMathEditor ? ' | matheditor' : '';
         if ($this->isSimple()) {
-            return 'removeformat | bold italic | rtl ltr | link emoticons';
+            return 'removeformat | bold italic | rtl ltr | link emoticons' . $mathEditor;
         }
 
         if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.toolbar')) {
-            return config('filament-forms-tinyeditor.profiles.'.$this->profile.'.toolbar');
+            return config('filament-forms-tinyeditor.profiles.'.$this->profile.'.toolbar') . $mathEditor;
         }
 
-        return 'undo redo removeformat | formatselect fontsizeselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen';
+        return 'undo redo removeformat | formatselect fontsizeselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen' . $mathEditor;
     }
 
     public function height(int $height): static
@@ -103,6 +108,13 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
     public function simple(bool | callable $condition = true): static
     {
         $this->isSimple = $condition;
+
+        return $this;
+    }
+
+    public function enabledMathEditor(): static
+    {
+        $this->enabledMathEditor = true;
 
         return $this;
     }

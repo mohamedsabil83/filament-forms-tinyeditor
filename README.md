@@ -88,6 +88,14 @@ To show the menubar of the editor, use the `->showMenuBar()` method:
 TinyEditor::make('content')->showMenuBar()
 ```
 
+### **Enable Math Editor Plugin**
+
+To show the math toolbar of the editor, use the `->enabledMathEditor()` method:
+
+```php
+TinyEditor::make('content')->enabledMathEditor()
+```
+
 ### **Localization**
 
 By default, toolbar button labels shown same as current laravel locale. To force editor to use a specific language, you can use tge `->language()` method:
