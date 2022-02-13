@@ -13,9 +13,8 @@
             tinymce.init({
                 target: $refs.tinymce,
                 language: '{{ $getInterfaceLanguage() }}',
-                themes: 'modern',
-                skin: 'custom',
-                content_css: 'custom',
+                skin: typeof theme != 'undefined' ? theme : 'light',
+                content_css: this.skin === 'dark' ? 'dark' : '',
                 max_height: {{ $getHeight() }},
                 menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
                 plugins: ['{{ $getPlugins() }}'],
@@ -81,6 +80,6 @@
 
 @once
     @push('scripts')
-        <script src="{{ asset("vendor/filament-forms-tinyeditor/tinymce/tinymce.min.js") }}"></script>
+        <script src="{{ asset('vendor/filament-forms-tinyeditor/tinymce/tinymce.min.js') }}"></script>
     @endpush
 @endonce
