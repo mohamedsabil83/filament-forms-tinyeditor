@@ -2,6 +2,14 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.5.0 - 2022-02-13
+
+## What's Changed
+
+- Support dark mode in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/6
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.4.0...v1.5.0
+
 ## v1.4.0 - 2022-02-08
 
 Support Laravel 9
