@@ -9,7 +9,9 @@
 
 Filament Forms TinyEditor is a package for [Laravel Filament](https://github.com/laravel-filament/filament) that wraps [TinyMce Editor](https://www.tiny.cloud) into a usable component. It's works with [Filament Forms](https://filamentadmin.com/docs/2.x/forms/installation) standalone too.
 
-![Editor example](./art/editor.png)
+Light mode                           | Dark mode
+:-----------------------------------:|:-----------------------------------:
+![Light example](./art/editor.png)   | ![Dark example](./art/editor-dark.png)
 
 ## Installation
 
@@ -25,7 +27,13 @@ Next, publish the asset by run the following:
 php artisan vendor:publish --tag="filament-forms-tinyeditor-assets"
 ```
 
-> **Sometimes, you may need to re-publish the assets after upgrading.**
+## Upgrade
+
+**Sometimes,** you may need to re-publish and override the assets after upgrading:
+
+```bash
+php artisan vendor:publish --tag="filament-forms-tinyeditor-assets" --force
+```
 
 ## Usage
 
