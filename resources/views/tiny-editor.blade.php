@@ -9,7 +9,7 @@
 >
     <div
         x-data="{ state: $wire.entangle('{{ $getStatePath() }}') }"
-        x-init="document.addEventListener('DOMContentLoaded', () => {
+        x-init="$nextTick(() => {
             tinymce.init({
                 target: $refs.tinymce,
                 language: '{{ $getInterfaceLanguage() }}',
