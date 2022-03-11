@@ -2,6 +2,17 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.5.2 - 2022-03-11
+
+## What's Changed
+
+- Bump dependabot/fetch-metadata from 1.2.0 to 1.2.1 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/9
+- Bump dependabot/fetch-metadata from 1.2.1 to 1.3.0 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/11
+- Bump actions/checkout from 2 to 3 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/10
+- Revert init from DOMContentLoaded to nextTick by @mohamedsabil83 in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/13
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.5.1...v1.5.2
+
 ## v1.5.1 - 2022-02-24
 
 ## What's Changed
