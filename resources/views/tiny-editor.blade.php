@@ -8,12 +8,12 @@
     :state-path="$getStatePath()"
 >
     <div
-        x-data="{ state: $wire.entangle('{{ $getStatePath() }}'), initalized: false }"
+        x-data="{ state: $wire.entangle('{{ $getStatePath() }}'), initialized: false }"
         x-init="(() => {
                 window.addEventListener('DOMContentLoaded', () => initTinymce())
                 $nextTick(() => initTinymce())
                 const initTinymce = () => {
-                    if (window.tinymce !== undefined && initalized === false) {
+                    if (window.tinymce !== undefined && initialized === false) {
                         tinymce.init({
                             target: $refs.tinymce,
                             language: '{{ $getInterfaceLanguage() }}',
@@ -63,7 +63,7 @@
                                 });
                             }
                         })
-                        initalized = true
+                        initialized = true
                     }
                 }
             })()"
