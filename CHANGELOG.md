@@ -2,6 +2,18 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.5.3 - 2022-03-22
+
+## What's Changed
+
+- fix: rendering problem on normal resources by @FurkanGM in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/15
+
+## New Contributors
+
+- @FurkanGM made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/15
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.5.2...v1.5.3
+
 ## v1.5.2 - 2022-03-11
 
 ## What's Changed
