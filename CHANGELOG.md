@@ -2,6 +2,14 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.5.4 - 2022-04-01
+
+## What's Changed
+
+- Improve content preview on dark mode by @mohamedsabil83 in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/16
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.5.3...v1.5.4
+
 ## v1.5.3 - 2022-03-22
 
 ## What's Changed
