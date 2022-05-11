@@ -2,6 +2,19 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.5.5 - 2022-05-11
+
+## What's Changed
+
+- Bump dependabot/fetch-metadata from 1.3.0 to 1.3.1 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/19
+- Add TinyMCE URL modifiers by @heloufir in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/20
+
+## New Contributors
+
+- @heloufir made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/20
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.5.4...v1.5.5
+
 ## v1.5.4 - 2022-04-01
 
 ## What's Changed
