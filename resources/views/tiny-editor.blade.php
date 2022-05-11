@@ -24,6 +24,9 @@
                         plugins: ['{{ $getPlugins() }}'],
                         toolbar: '{{ $getToolbar() }}',
                         toolbar_mode: 'sliding',
+                        relative_urls : {{ $getRelativeUrls() ? 'true' : 'false' }},
+                        remove_script_host : {{ $getRemoveScriptHost() ? 'true' : 'false' }},
+                        convert_urls : {{ $getConvertUrls() ? 'true' : 'false' }},
                         branding: false,
                         images_upload_handler: (blobInfo, success, failure, progress) => {
                             if (!blobInfo.blob()) return
