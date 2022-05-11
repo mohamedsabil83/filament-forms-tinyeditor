@@ -24,6 +24,15 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
 
     protected string $language;
 
+    // TinyMCE var: relative_urls
+    protected bool $relativeUrls = true;
+
+    // TinyMCE var: remove_script_host
+    protected bool $removeScriptHost = true;
+
+    // TinyMCE var: convert_urls
+    protected bool $convertUrls = true;
+
     protected string $view = 'filament-forms-tinyeditor::tiny-editor';
 
     public function getHeight(): int
@@ -103,6 +112,42 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
     public function simple(bool | callable $condition = true): static
     {
         $this->isSimple = $condition;
+
+        return $this;
+    }
+
+    public function getRelativeUrls(): bool
+    {
+        return $this->relativeUrls;
+    }
+
+    public function setRelativeUrls(bool $relativeUrls): static
+    {
+        $this->relativeUrls = $relativeUrls;
+
+        return $this;
+    }
+
+    public function getRemoveScriptHost(): bool
+    {
+        return $this->removeScriptHost;
+    }
+
+    public function setRemoveScriptHost(bool $removeScriptHost): static
+    {
+        $this->removeScriptHost = $removeScriptHost;
+
+        return $this;
+    }
+
+    public function getConvertUrls(): bool
+    {
+        return $this->convertUrls;
+    }
+
+    public function setConvertUrls(bool $convertUrls): static
+    {
+        $this->convertUrls = $convertUrls;
 
         return $this;
     }
