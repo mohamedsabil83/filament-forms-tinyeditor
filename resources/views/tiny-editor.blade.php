@@ -42,6 +42,7 @@
                             })
                         },
                         automatic_uploads: true,
+                        templates: {{ $getTemplate() }},
                         setup: function(editor) {
                             editor.on('blur', function(e) {
                                 state = editor.getContent()
