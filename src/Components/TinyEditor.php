@@ -33,6 +33,8 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
     // TinyMCE var: convert_urls
     protected bool $convertUrls = true;
 
+    protected string $template;
+
     protected string $view = 'filament-forms-tinyeditor::tiny-editor';
 
     public function getHeight(): int
@@ -150,5 +152,21 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
         $this->convertUrls = $convertUrls;
 
         return $this;
+    }
+
+    public function template(string $template): static
+    {
+        $this->template = $template;
+
+        return $this;
+    }
+
+    public function getTemplate(): string
+    {
+        if (empty($this->template)) {
+            return json_encode([]);
+        }
+
+        return json_encode(config('filament-forms-tinyeditor.templates.'.$this->template, []));
     }
 }
