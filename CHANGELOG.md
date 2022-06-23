@@ -2,6 +2,18 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.6.0 - 2022-06-23
+
+### What's Changed
+
+- add: template, config by @MilesWuCode in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/24
+
+### New Contributors
+
+- @MilesWuCode made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/24
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.5.5...v1.6.0
+
 ## v1.5.5 - 2022-05-11
 
 ## What's Changed
