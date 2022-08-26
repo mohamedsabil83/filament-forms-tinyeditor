@@ -66,7 +66,8 @@
                                     putCursorToEnd();
                                 }
                             });
-                        }
+                        },
+                        {{ $getCustomConfigs() }}
                     })
                     initialized = true
                 }

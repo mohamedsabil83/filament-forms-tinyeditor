@@ -26,6 +26,38 @@ return [
             'plugins' => 'autoresize template',
             'toolbar' => 'template',
         ],
+        /*
+        |--------------------------------------------------------------------------
+        | Custom Configs
+        |--------------------------------------------------------------------------
+        |
+        | If you want to add custom configurations to directly tinymce
+        | You can use custom_configs key as an array
+        |
+        */
+
+        /*
+          'default' => [
+            'plugins' => 'advlist autoresize codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount',
+            'toolbar' => 'undo redo removeformat | formatselect fontsizeselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen',
+            'custom_configs' => [
+                'allow_html_in_named_anchor' => true,
+                'link_default_target' => '_blank',
+                'codesample_global_prismjs' => true,
+                'image_advtab' => true,
+                'image_class_list' => [
+                  [
+                    'title' => 'None',
+                    'value' => '',
+                  ],
+                  [
+                    'title' => 'Fluid',
+                    'value' => 'img-fluid',
+                  ],
+              ],
+            ]
+        ],
+        */
 
     ],
 

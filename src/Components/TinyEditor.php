@@ -169,4 +169,13 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
 
         return json_encode(config('filament-forms-tinyeditor.templates.'.$this->template, []));
     }
+
+    public function getCustomConfigs(): string
+    {
+        if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs')) {
+            return rtrim(ltrim(json_encode(config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs')), "{"), "}");
+        }
+
+        return "";
+    }
 }
