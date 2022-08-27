@@ -80,6 +80,57 @@ TinyEditor::make('content')->profile('your-profile-name')
 
 For more information about available plugins and toolbar buttons, visit the related page on the [TinyMCE](https://www.tiny.cloud/docs/advanced/available-toolbar-buttons) site.
 
+### **Custom TinyMCE Config**
+
+By default, tinymce initialized with necessary configs, but if you want to add your config for example `image_advtab: true` ([image_advtab@TinyMce Docs](https://www.tiny.cloud/docs/plugins/opensource/image/#exampleusingimage_advtab)) you can use custom_configs key inside laravel configuration file
+
+You need to convert tinymce json to php array. 
+
+Eg. `image_advtab: true` to `'image_advtab' => true`.
+
+Eg. 
+```js
+image_class_list: [
+    {title: 'None', value: ''},
+    {title: 'Fluid', value: 'img-fluid'},
+]
+```
+to
+```php
+'image_class_list' => [
+    [
+        'title' => 'None',
+        'value' => '',
+    ],
+    [
+        'title' => 'Fluid',
+        'value' => 'img-fluid',
+    ]
+]
+```
+
+There is no restriction of configs, you can add everything in here it will be converted and added to tinymce.init() function
+
+```php
+// config/filament-forms-tinyeditor.php
+
+'simple' => [
+    'plugins' => 'directionality emoticons link wordcount',
+    'toolbar' => 'removeformat | bold italic | rtl ltr | link emoticons',
+    'custom_configs' => [
+        'image_advtab' => true
+    ]
+],
+```
+
+Will be converted and added to javascript directly.
+```js
+tinymce.init({
+    //... all other things
+    "image_advtab": true
+})
+```
+
 ### **Editor Height**
 
 By default, the editor will automatically resizes to match the content inside it. If you need to control the height of the editor you can use `->height(int)` method to set the **maximum height**.
