@@ -2,6 +2,19 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.6.2 - 2022-08-27
+
+### What's Changed
+
+- Add - custom_config support for tinymce configurations by @halilcagriakkuzu in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/26
+- Updated README.md for custom_configs feature by @halilcagriakkuzu in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/27
+
+### New Contributors
+
+- @halilcagriakkuzu made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/26
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.6.1...v1.6.2
+
 ## v1.6.1 - 2022-08-12
 
 ### What's Changed
