@@ -7,6 +7,7 @@
     :hint-icon="$getHintIcon()"
     :required="$isRequired()"
     :state-path="$getStatePath()"
+    class="relative z-0"
 >
     <div
         x-data="{ state: $wire.entangle('{{ $getStatePath() }}'), initialized: false }"
