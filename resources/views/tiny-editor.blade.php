@@ -5,6 +5,8 @@
     :helper-text="$getHelperText()"
     :hint="$getHint()"
     :hint-icon="$getHintIcon()"
+    :hint-action="$getHintAction()"
+    :hint-color="$getHintColor()"
     :required="$isRequired()"
     :state-path="$getStatePath()"
 >
