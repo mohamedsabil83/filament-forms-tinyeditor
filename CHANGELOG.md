@@ -2,6 +2,21 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.6.3 - 2022-10-15
+
+### What's Changed
+
+- Bump dependabot/fetch-metadata from 1.3.3 to 1.3.4 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/33
+- Update tiny-editor.blade.php by @flyingeek in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/36
+- Fix tinymce toolbar appearing over sticky topbar by @howdu in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/35
+
+### New Contributors
+
+- @flyingeek made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/36
+- @howdu made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/35
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.6.2...v1.6.3
+
 ## v1.6.2 - 2022-08-27
 
 ### What's Changed
