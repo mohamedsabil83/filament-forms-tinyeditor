@@ -2,6 +2,17 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.6.4 - 2022-10-22
+
+### What's Changed
+
+- fix improvemnts by @mohamedsabil83 in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/38
+
+- Support placeholder & length constrained
+- Fix issue [#32 Cannot focus textarea field in Tinymce modal](#32)
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.6.3...v1.6.4
+
 ## v1.6.3 - 2022-10-15
 
 ### What's Changed
