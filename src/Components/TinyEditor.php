@@ -6,9 +6,11 @@ use Filament\Forms\Components\Concerns;
 use Filament\Forms\Components\Contracts;
 use Filament\Forms\Components\Field;
 
-class TinyEditor extends Field implements Contracts\HasFileAttachments
+class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Contracts\HasFileAttachments
 {
+    use Concerns\CanBeLengthConstrained;
     use Concerns\HasFileAttachments;
+    use Concerns\HasPlaceholder;
 
     protected bool $isSimple = false;
 
@@ -173,9 +175,9 @@ class TinyEditor extends Field implements Contracts\HasFileAttachments
     public function getCustomConfigs(): string
     {
         if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs')) {
-            return rtrim(ltrim(json_encode(config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs')), "{"), "}");
+            return rtrim(ltrim(json_encode(config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs')), '{'), '}');
         }
 
-        return "";
+        return '';
     }
 }
