@@ -60,14 +60,10 @@
                             })
 
                             editor.on('OpenWindow', function(e) {
-                                console.log('OpenWindow')
-                                console.log(e.target.container.closest('.filament-modal'))
                                 e.target.container.closest('.filament-modal').setAttribute('x-trap.noscroll', 'false')
                             })
 
                             editor.on('CloseWindow', function(e) {
-                                console.log('CloseWindow')
-                                console.log(e.target.container.closest('.filament-modal'))
                                 e.target.container.closest('.filament-modal').setAttribute('x-trap.noscroll', 'isOpen')
                             })
 
