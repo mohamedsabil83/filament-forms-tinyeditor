@@ -169,7 +169,7 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
         }
     }
 
-    public function setDocumentbaseUrl(string | Closure $baseUrl): static
+    public function setDocumentBaseUrl(string | Closure $baseUrl): static
     {
         $this->documentBaseUrl = $baseUrl;
 
