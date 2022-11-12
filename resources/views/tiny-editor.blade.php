@@ -15,8 +15,8 @@
     <div
         x-data="{ state: $wire.{{ $applyStateBindingModifiers('entangle(\'' . $getStatePath() . '\')') }}, initialized: false }"
         x-init="(() => {
-            window.addEventListener('DOMContentLoaded', () => initTinymce())
-            $nextTick(() => initTinymce())
+            window.addEventListener('DOMContentLoaded', () => initTinymce());
+            $nextTick(() => initTinymce());
             const initTinymce = () => {
                 if (window.tinymce !== undefined && initialized === false) {
                     tinymce.init({
@@ -73,16 +73,34 @@
                             }
 
                             $watch('state', function(newstate) {
-                                if (newstate !== editor.getContent()) {
+                                // unfortunately livewire doesn't provide a way to 'unwatch' so this listener sticks
+                                // around even after this component is torn down. Which means that we need to check
+                                // that editor.container exists. If it doesn't exist we do nothing because that means
+                                // the editor was removed from the DOM
+                                if (editor.container && newstate !== editor.getContent()) {
                                     editor.resetContent(newstate || '');
                                     putCursorToEnd();
                                 }
                             });
                         },
                         {{ $getCustomConfigs() }}
-                    })
-                    initialized = true
+                    });
+                    initialized = true;
                 }
+            }
+
+            // We initialize here because if the component is first loaded from within a modal DOMContentLoaded
+            // won't fire and if we want to register a Livewire.hook listener Livewire.hook isn't available from
+            // inside the once body
+            if (!window.tinyMceInitialized) {
+                window.tinyMceInitialized = true;
+                $nextTick(() => {
+                    Livewire.hook('element.removed', (el, component) => {
+                        if (el.nodeName === 'INPUT' && el.getAttribute('x-ref') === 'tinymce') {
+                            tinymce.get(el.id)?.remove();
+                        }
+                    });
+                });
             }
         })()"
         x-cloak
