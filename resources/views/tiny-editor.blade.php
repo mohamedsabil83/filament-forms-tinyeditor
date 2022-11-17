@@ -83,7 +83,7 @@
                                 }
                             });
                         },
-                        {{ $getCustomConfigs() }}
+                        ...{{ $getCustomConfigs() }}
                     });
                     initialized = true;
                 }
