@@ -2,6 +2,18 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.6.6 - 2022-11-17
+
+### What's Changed
+
+- Fix merge custom configs by @guilebc in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/43
+
+### New Contributors
+
+- @guilebc made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/43
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.6.5...v1.6.6
+
 ## v1.6.5 - 2022-11-14
 
 ### What's Changed
