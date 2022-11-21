@@ -2,6 +2,14 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.6.7 - 2022-11-21
+
+### What's Changed
+
+- Fix custom configs when custom_configs is empty by @guilebc in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/44
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.6.6...v1.6.7
+
 ## v1.6.6 - 2022-11-17
 
 ### What's Changed
