@@ -2,6 +2,19 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.6.8 - 2022-11-22
+
+### What's Changed
+
+- Bump ramsey/composer-install from 1 to 2 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/45
+- Added option to set custom file upload directory per profile by @sweebee in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/47
+
+### New Contributors
+
+- @sweebee made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/47
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.6.7...v1.6.8
+
 ## v1.6.7 - 2022-11-21
 
 ### What's Changed
