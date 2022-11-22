@@ -43,9 +43,10 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
     {
         return $this->height;
     }
-    
-    public function getFileAttachmentsDirectory(): ?string {
-        return config('filament-forms-tinyeditor.profiles.'.$this->profile.'upload_directory');
+
+    public function getFileAttachmentsDirectory(): ?string
+    {
+        return filled($directory = $this->evaluate($this->fileAttachmentsDirectory)) ? $directory : config('filament-forms-tinyeditor.profiles.'.$this->profile.'.upload_directory');
     }
 
     public function getInterfaceLanguage(): string
@@ -179,7 +180,7 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
     public function getCustomConfigs(): string
     {
         if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs')) {
-            return '...' . json_encode(config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs'));
+            return '...'.json_encode(config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs'));
         }
 
         return '';
