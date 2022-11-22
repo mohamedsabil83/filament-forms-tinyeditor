@@ -43,6 +43,10 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
     {
         return $this->height;
     }
+    
+    public function getFileAttachmentsDirectory(): ?string {
+        return config('filament-forms-tinyeditor.profiles.'.$this->profile.'upload_directory');
+    }
 
     public function getInterfaceLanguage(): string
     {
