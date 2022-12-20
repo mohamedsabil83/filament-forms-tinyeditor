@@ -23,7 +23,7 @@
                         target: $refs.tinymce,
                         language: '{{ $getInterfaceLanguage() }}',
                         skin: typeof theme != 'undefined' ? theme : 'light',
-                        content_css: this.skin === 'dark' ? 'dark' : '',
+                        content_css: this.skin === 'dark' ? 'dark' : 'default',
                         max_height: {{ $getHeight() }},
                         menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
                         plugins: ['{{ $getPlugins() }}'],
