@@ -133,10 +133,14 @@ tinymce.init({
 
 ### **Editor Height**
 
-By default, the editor will automatically resizes to match the content inside it. If you need to control the height of the editor you can use `->height(int)` method to set the **maximum height**.
+By default, the editor will automatically resizes to match the content inside it. If you need to control the height of the editor you can use `->minHeight(int)` method to set the **minimum height** and `->maxHeight(int)` method to set the **maximum height**.
 
 ```php
-TinyEditor::make('content')->height(300)
+TinyEditor::make('content')->minHeight(300)
+```
+
+```php
+TinyEditor::make('content')->maxHeight(300)
 ```
 
 ### **Show menubar**

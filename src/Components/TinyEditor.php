@@ -16,7 +16,9 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     protected bool $showMenuBar = false;
 
-    protected int $height = 0;
+    protected int $maxHeight = 0;
+
+    protected int $minHeight = 0;
 
     protected string $plugins;
 
@@ -39,9 +41,14 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     protected string $view = 'filament-forms-tinyeditor::tiny-editor';
 
-    public function getHeight(): int
+    public function getMaxHeight(): int
     {
-        return $this->height;
+        return $this->maxHeight;
+    }
+
+    public function getMinHeight(): int
+    {
+        return $this->minHeight;
     }
 
     public function getFileAttachmentsDirectory(): ?string
@@ -85,9 +92,16 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
         return 'undo redo removeformat | formatselect fontsizeselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen';
     }
 
-    public function height(int $height): static
+    public function maxHeight(int $maxHeight): static
     {
-        $this->height = $height;
+        $this->maxHeight = $maxHeight;
+
+        return $this;
+    }
+
+    public function minHeight(int $minHeight): static
+    {
+        $this->minHeight = $minHeight;
 
         return $this;
     }
