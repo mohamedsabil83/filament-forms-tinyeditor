@@ -41,6 +41,14 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     protected string $view = 'filament-forms-tinyeditor::tiny-editor';
 
+    /**
+     * @deprecated Use `getMaxHeight()` instead.
+     */
+    public function getHeight(): int
+    {
+        return $this->getMaxHeight();
+    }
+
     public function getMaxHeight(): int
     {
         return $this->maxHeight;
@@ -90,6 +98,14 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
         }
 
         return 'undo redo removeformat | formatselect fontsizeselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen';
+    }
+
+    /**
+     * @deprecated Use `maxHeight()` instead.
+     */
+    public function height(int $height): static
+    {
+        return $this->maxHeight($height);
     }
 
     public function maxHeight(int $maxHeight): static
