@@ -2,6 +2,19 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.6.9 - 2023-01-10
+
+### What's Changed
+
+- Update options for TinyMCE content_css to default by @howdu in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/48
+- Added minHeight, and renamed height to maxHeight by @RAugadh in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/51
+
+### New Contributors
+
+- @RAugadh made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/51
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.6.8...v1.6.9
+
 ## v1.6.8 - 2022-11-22
 
 ### What's Changed
