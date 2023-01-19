@@ -24,6 +24,7 @@
                         language: '{{ $getInterfaceLanguage() }}',
                         skin: typeof theme != 'undefined' ? theme : 'light',
                         content_css: this.skin === 'dark' ? 'dark' : 'default',
+                        body_class: theme === 'dark' ? 'dark' : 'light',
                         max_height: {{ $getMaxHeight() }},
                         min_height: {{ $getMinHeight() }},
                         menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
