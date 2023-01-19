@@ -2,6 +2,19 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.6.10 - 2023-01-19
+
+### What's Changed
+
+- Theme based body_class by @volkar in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/57
+- Theme based body_class fixed by @volkar in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/58
+
+### New Contributors
+
+- @volkar made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/57
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.6.9...v1.6.10
+
 ## v1.6.9 - 2023-01-10
 
 ### What's Changed
