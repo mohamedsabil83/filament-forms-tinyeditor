@@ -22,8 +22,9 @@
                     tinymce.init({
                         target: $refs.tinymce,
                         language: '{{ $getInterfaceLanguage() }}',
-                        skin: theme === 'dark' ? 'oxide-dark' : 'oxide',
-                        content_css: theme === 'dark' ? 'dark' : 'default',
+                        skin: typeof theme !== 'undefined' ? theme : 'light',
+                        content_css: typeof theme !== 'undefined' && theme === 'dark' ? 'dark' : 'default',
+                        body_class: typeof theme !== 'undefined' && theme === 'dark' ? 'dark' : 'light',
                         max_height: {{ $getMaxHeight() }},
                         min_height: {{ $getMinHeight() }},
                         menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
