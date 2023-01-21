@@ -73,7 +73,7 @@ return [
     |
     | https://www.tiny.cloud/docs/plugins/opensource/template/#templates
     |
-    | ex: TinyEditor::make('content')->profiles('template')->templates('example')
+    | ex: TinyEditor::make('content')->profiles('template')->template('example')
     */
 
     'templates' => [
