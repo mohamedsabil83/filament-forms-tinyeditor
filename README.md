@@ -130,6 +130,11 @@ tinymce.init({
     "image_advtab": true
 })
 ```
+### **Image Upload **
+You can customize hpw the image plugin uploads new images in the editor using the helper methods associated with the `HasFileAttachments` trait. This measns you can specify the storage disk driver, directory and image visibility easily using methods directly on the field component.
+```php
+TinyEditor::make('content')->fileAttachmentsDisk('local')->fileAttachmentsVisibility('public')->fileAttachmentsDirectory('uploads');
+```
 
 ### **Editor Height**
 
