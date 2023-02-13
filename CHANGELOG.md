@@ -2,6 +2,22 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.7.0 - 2023-02-13
+
+### What's Changed
+
+- Support Laravel 10
+- Update filament-forms-tinyeditor.php by @nguyentranchung in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/59
+- Update readme to include instructions for image upload config by @alexbirtwell in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/60
+- Bump dependabot/fetch-metadata from 1.3.5 to 1.3.6 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/61
+
+### New Contributors
+
+- @nguyentranchung made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/59
+- @alexbirtwell made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/60
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.6.10...v1.7.0
+
 ## v1.6.10 - 2023-01-19
 
 ### What's Changed
