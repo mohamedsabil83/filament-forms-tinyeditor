@@ -148,7 +148,7 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
         return $this;
     }
 
-    public function simple(bool | callable $condition = true): static
+    public function simple(bool|callable $condition = true): static
     {
         $this->isSimple = $condition;
 
