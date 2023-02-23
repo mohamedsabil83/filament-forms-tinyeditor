@@ -2,6 +2,11 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.7.1 - 2023-02-23
+
+- [fix]: Issue when use some editor plugins outside modal
+- **Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.7.0...v1.7.1
+
 ## v1.7.0 - 2023-02-13
 
 ### What's Changed
