@@ -51,6 +51,11 @@
                         automatic_uploads: true,
                         templates: {{ $getTemplate() }},
                         setup: function(editor) {
+                            if(!window.tinySettingsCopy) {
+                                window.tinySettingsCopy = [];
+                            }
+                            window.tinySettingsCopy.push(editor.settings);
+
                             editor.on('blur', function(e) {
                                 state = editor.getContent()
                             })
