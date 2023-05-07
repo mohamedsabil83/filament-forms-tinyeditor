@@ -129,9 +129,3 @@
         @endunless
     </div>
 </x-dynamic-component>
-
-@once
-    @push('scripts')
-        <script src="{{ asset('vendor/filament-forms-tinyeditor/tinymce/tinymce.min.js') }}"></script>
-    @endpush
-@endonce
