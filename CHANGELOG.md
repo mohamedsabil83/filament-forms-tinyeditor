@@ -2,6 +2,21 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.7.2 - 2023-05-08
+
+### What's Changed
+
+- Bump aglipanci/laravel-pint-action from 2.1.0 to 2.2.0 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/63
+- Upgrade tinymce to 5.10.7 by @nguyentranchung in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/53
+- Bump dependabot/fetch-metadata from 1.3.6 to 1.4.0 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/69
+- Fix content dissapearing when order is changed by @dood- in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/70
+
+### New Contributors
+
+- @dood- made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/70
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.7.1...v1.7.2
+
 ## v1.7.1 - 2023-02-23
 
 - [fix]: Issue when use some editor plugins outside modal
