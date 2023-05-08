@@ -43,6 +43,7 @@ class FilamentFormsTinyeditorServiceProvider extends PackageServiceProvider
     {
         return [
             'filament-forms-tinyeditor' => asset('vendor/filament-forms-tinyeditor/tinymce/tinymce.min.js'),
+            'filament-forms-tinyeditor-app' => asset('vendor/filament-forms-tinyeditor/js/app.js'),
         ];
     }
 }
