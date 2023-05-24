@@ -2,6 +2,14 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.7.3 - 2023-05-24
+
+### What's Changed
+
+- Fix image dialog by @dood- in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/73
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.7.2...v1.7.3
+
 ## v1.7.2 - 2023-05-08
 
 ### What's Changed
