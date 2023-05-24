@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        if (sortableClass.some(i => el.classList.contains(i))) {
+        const isModalOpen = document.body.classList.contains('tox-dialog__disable-scroll');
+
+        if (!isModalOpen && sortableClass.some(i => el.classList.contains(i))) {
             removeEditors();
             setTimeout(reinitializeEditors, 1);
         }
