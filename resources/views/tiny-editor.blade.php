@@ -22,6 +22,8 @@
                     tinymce.init({
                         target: $refs.tinymce,
                         language: '{{ $getInterfaceLanguage() }}',
+                        toolbar_sticky: true,
+                        toolbar_sticky_offset: 64,
                         skin: typeof theme !== 'undefined' ? theme : 'light',
                         content_css: typeof theme !== 'undefined' && theme === 'dark' ? 'dark' : 'default',
                         body_class: typeof theme !== 'undefined' && theme === 'dark' ? 'dark' : 'light',

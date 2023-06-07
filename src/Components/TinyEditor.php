@@ -28,6 +28,8 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     protected string $language;
 
+    protected bool $toolbarSticky = false;
+
     // TinyMCE var: relative_urls
     protected bool $relativeUrls = true;
 
@@ -40,6 +42,18 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
     protected string $template;
 
     protected string $view = 'filament-forms-tinyeditor::tiny-editor';
+
+    public function getToolbarSticky(): bool
+    {
+        return $this->toolbarSticky;
+    }
+
+    public function toolbarSticky(bool $toolbarSticky): static
+    {
+        $this->toolbarSticky = $toolbarSticky;
+
+        return $this;
+    }
 
     /**
      * @deprecated Use `getMaxHeight()` instead.
