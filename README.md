@@ -156,6 +156,14 @@ To show the menubar of the editor, use the `->showMenuBar()` method:
 TinyEditor::make('content')->showMenuBar()
 ```
 
+### **Sticky menubar**
+
+To sticky the menubar of the editor, use the `->toolbarSticky()` method:
+
+```php
+TinyEditor::make('content')->toolbarSticky()
+```
+
 ### **Localization**
 
 By default, toolbar button labels shown same as current laravel locale. To force editor to use a specific language, you can use tge `->language()` method:
