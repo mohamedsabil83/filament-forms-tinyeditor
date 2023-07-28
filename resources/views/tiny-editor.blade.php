@@ -5,6 +5,7 @@
 >
     <div
         x-data="{ state: $wire.entangle('{{ $getStatePath() }}'), initialized: false }"
+        x-load-js="[@js(\Filament\Support\Facades\FilamentAsset::getScriptSrc($getLanguageId(), 'mohamedsabil83/filament-forms-tinyeditor'))]"
         x-init="(() => {
             window.addEventListener('DOMContentLoaded', () => initTinymce());
             $nextTick(() => initTinymce());
@@ -13,6 +14,7 @@
                     tinymce.init({
                         target: $refs.tinymce,
                         language: '{{ $getInterfaceLanguage() }}',
+                        language_url: 'https://cdn.jsdelivr.net/npm/tinymce-i18n@23.7.24/langs5/{{ $getInterfaceLanguage() }}.min.js',
                         toolbar_sticky: {{ $getToolbarSticky() ? 'true' : 'false' }},
                         toolbar_sticky_offset: 64,
                         skin: {
