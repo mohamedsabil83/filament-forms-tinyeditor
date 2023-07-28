@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
         'filament-forms-repeater-component',
     ];
 
+    Livewire.hook('element.removed', (el, component) => {
+        if (el && el.getAttribute('x-ref') === 'tinymce') {
+            tinymce.execCommand('mceRemoveEditor', false, el.id)
+            window.tinySettingsCopy = window.tinySettingsCopy.filter(tinySetting => tinySetting.id !== el.id);
+        }
+    });
+
     Livewire.hook('element.updated', (el) => {
         if (!window.tinySettingsCopy) {
             return;
