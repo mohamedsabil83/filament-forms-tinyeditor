@@ -2,6 +2,15 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v1.7.5 - 2023-07-28
+
+### What's Changed
+
+- Bump dependabot/fetch-metadata from 1.5.1 to 1.6.0 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/79
+- Add hook for removing tinymce instance by @howdu in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/84
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v1.7.4...v1.7.5
+
 ## v1.7.4 - 2023-06-11
 
 ### What's Changed
