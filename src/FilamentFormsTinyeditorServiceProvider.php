@@ -2,12 +2,16 @@
 
 namespace Mohamedsabil83\FilamentFormsTinyeditor;
 
-use Filament\Facades\Filament;
+use Filament\Support\Assets\Css;
+use Filament\Support\Assets\Js;
+use Filament\Support\Facades\FilamentAsset;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class FilamentFormsTinyeditorServiceProvider extends PackageServiceProvider
 {
+    public static string $name = 'filament-forms-tinyeditor';
+
     public function configurePackage(Package $package): void
     {
         /*
@@ -16,34 +20,18 @@ class FilamentFormsTinyeditorServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('filament-forms-tinyeditor')
+            ->name(static::$name)
             ->hasConfigFile()
-            ->hasViews()
-            ->hasAssets();
+            ->hasViews();
     }
 
-    public function boot()
+    public function packageBooted(): void
     {
-        parent::boot();
-
-        if (class_exists(\Filament\FilamentServiceProvider::class)) {
-            /*
-             * Next lines used to register the tiny scripts when use Filament admin.
-             *
-             * @phpstan-ignore-next-line
-             */
-            Filament::serving(function () {
-                // @phpstan-ignore-next-line
-                Filament::registerScripts($this->getScripts());
-            });
-        }
-    }
-
-    protected function getScripts(): array
-    {
-        return [
-            'filament-forms-tinyeditor' => asset('vendor/filament-forms-tinyeditor/tinymce/tinymce.min.js'),
-            'filament-forms-tinyeditor-app' => asset('vendor/filament-forms-tinyeditor/js/app.js'),
-        ];
+        FilamentAsset::register([
+            Css::make('skin-light', 'https://cdn.jsdelivr.net/npm/tinymce@5.10.7/skins/ui/oxide/skin.min.css'),
+            Css::make('skin-dark', 'https://cdn.jsdelivr.net/npm/tinymce@5.10.7/skins/ui/oxide-dark/skin.min.css'),
+            Js::make('tinymce', 'https://cdn.jsdelivr.net/npm/tinymce@5.10.7/tinymce.min.js'),
+            Js::make('tiny-editor', __DIR__.'/../resources/dist/js/tiny-editor.js'),
+        ], package: 'mohamedsabil83/filament-forms-tinyeditor');
     }
 }

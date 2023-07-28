@@ -1,19 +1,10 @@
 <x-dynamic-component
     :component="$getFieldWrapperView()"
-    :id="$getId()"
-    :label="$getLabel()"
-    :label-sr-only="$isLabelHidden()"
-    :helper-text="$getHelperText()"
-    :hint="$getHint()"
-    :hint-action="$getHintAction()"
-    :hint-color="$getHintColor()"
-    :hint-icon="$getHintIcon()"
-    :required="$isRequired()"
-    :state-path="$getStatePath()"
+    :field="$field"
     class="relative z-0"
 >
     <div
-        x-data="{ state: $wire.{{ $applyStateBindingModifiers('entangle(\'' . $getStatePath() . '\')') }}, initialized: false }"
+        x-data="{ state: $wire.entangle('{{ $getStatePath() }}'), initialized: false }"
         x-init="(() => {
             window.addEventListener('DOMContentLoaded', () => initTinymce());
             $nextTick(() => initTinymce());
@@ -24,9 +15,11 @@
                         language: '{{ $getInterfaceLanguage() }}',
                         toolbar_sticky: {{ $getToolbarSticky() ? 'true' : 'false' }},
                         toolbar_sticky_offset: 64,
-                        skin: typeof theme !== 'undefined' ? theme : 'light',
-                        content_css: typeof theme !== 'undefined' && theme === 'dark' ? 'dark' : 'default',
-                        body_class: typeof theme !== 'undefined' && theme === 'dark' ? 'dark' : 'light',
+                        skin: {
+                            light: 'oxide',
+                            dark: 'oxide-dark',
+                            system: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : 'oxide',
+                        }[theme] || 'oxide',
                         max_height: {{ $getMaxHeight() }},
                         min_height: {{ $getMinHeight() }},
                         menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
@@ -106,9 +99,9 @@
             if (!window.tinyMceInitialized) {
                 window.tinyMceInitialized = true;
                 $nextTick(() => {
-                    Livewire.hook('element.removed', (el, component) => {
-                        if (el.nodeName === 'INPUT' && el.getAttribute('x-ref') === 'tinymce') {
-                            tinymce.get(el.id)?.remove();
+                    Livewire.hook('morph.removed', (el, component) => {
+                        if (el.el.nodeName === 'INPUT' && el.el.getAttribute('x-ref') === 'tinymce') {
+                            tinymce.get(el.el.id)?.remove();
                         }
                     });
                 });
@@ -127,18 +120,8 @@
         @else
             <div
                 x-html="state"
-                @class([
-                    'prose block w-full max-w-none rounded-lg border border-gray-300 bg-white p-3 opacity-70 shadow-sm transition duration-75',
-                    'dark:prose-invert dark:border-gray-600 dark:bg-gray-700' => config(
-                        'forms.dark_mode'),
-                ])
+                class="block w-full max-w-none rounded-lg border border-gray-300 bg-white p-3 opacity-70 shadow-sm transition duration-75 prose dark:prose-invert dark:border-gray-600 dark:bg-gray-700 dark:text-white"
             ></div>
         @endunless
     </div>
 </x-dynamic-component>
-
-@once
-    @push('scripts')
-        <script src="{{ asset('vendor/filament-forms-tinyeditor/tinymce/tinymce.min.js') }}"></script>
-    @endpush
-@endonce

@@ -12,6 +12,8 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
     use Concerns\HasFileAttachments;
     use Concerns\HasPlaceholder;
 
+    protected string $view = 'filament-forms-tinyeditor::tiny-editor';
+
     protected bool $isSimple = false;
 
     protected bool $showMenuBar = false;
@@ -41,8 +43,6 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     protected string $template;
 
-    protected string $view = 'filament-forms-tinyeditor::tiny-editor';
-
     public function getToolbarSticky(): bool
     {
         return $this->toolbarSticky;
@@ -53,14 +53,6 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
         $this->toolbarSticky = $toolbarSticky;
 
         return $this;
-    }
-
-    /**
-     * @deprecated Use `getMaxHeight()` instead.
-     */
-    public function getHeight(): int
-    {
-        return $this->getMaxHeight();
     }
 
     public function getMaxHeight(): int
@@ -112,14 +104,6 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
         }
 
         return 'undo redo removeformat | formatselect fontsizeselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen';
-    }
-
-    /**
-     * @deprecated Use `maxHeight()` instead.
-     */
-    public function height(int $height): static
-    {
-        return $this->maxHeight($height);
     }
 
     public function maxHeight(int $maxHeight): static

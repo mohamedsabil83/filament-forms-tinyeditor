@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
     const sortableClass = [
-        'filament-forms-builder-component',
-        'filament-forms-repeater-component',
+        'fi-fo-builder-item',
+        'fi-fo-repeater-item',
     ];
 
-    Livewire.hook('element.updated', (el) => {
+    Livewire.hook('morph.updated', (el) => {
         if (!window.tinySettingsCopy) {
             return;
         }
 
         const isModalOpen = document.body.classList.contains('tox-dialog__disable-scroll');
 
-        if (!isModalOpen && sortableClass.some(i => el.classList.contains(i))) {
+        if (!isModalOpen && sortableClass.some(i => el.el.classList.contains(i))) {
             removeEditors();
             setTimeout(reinitializeEditors, 1);
         }
