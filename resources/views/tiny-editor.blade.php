@@ -36,7 +36,7 @@
                             if (!blobInfo.blob()) return
 
                             $wire.upload(`componentFileAttachments.{{ $getStatePath() }}`, blobInfo.blob(), () => {
-                                $wire.getComponentFileAttachmentUrl('{{ $getStatePath() }}').then((url) => {
+                                $wire.getFormComponentFileAttachmentUrl('{{ $getStatePath() }}').then((url) => {
                                     if (!url) {
                                         failure('{{ __('Error uploading file') }}')
                                         return
