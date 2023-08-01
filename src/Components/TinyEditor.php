@@ -43,6 +43,13 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     protected string $template;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->language = app()->getLocale();
+    }
+
     public function getToolbarSticky(): bool
     {
         return $this->toolbarSticky;
