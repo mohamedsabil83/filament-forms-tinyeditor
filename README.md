@@ -18,7 +18,7 @@ Light mode                           | Dark mode
 You can install the package via composer:
 
 ```bash
-composer require mohamedsabil83/filament-forms-tinyeditor
+composer require mohamedsabil83/filament-forms-tinyeditor:"^1.0"
 ```
 
 Next, publish the asset by run the following:
