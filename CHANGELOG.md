@@ -2,6 +2,12 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.0.2 - 2023-09-07
+
+[fix] Default value when dark mode disabled
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.0.1...v2.0.2
+
 ## v2.0.1 - 2023-08-01
 
 - [fix] Set a default language for the editor.
