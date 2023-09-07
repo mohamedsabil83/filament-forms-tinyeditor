@@ -21,7 +21,7 @@
                             light: 'oxide',
                             dark: 'oxide-dark',
                             system: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : 'oxide',
-                        }[theme] || 'oxide',
+                        }[typeof theme === 'undefined' ? 'light' : theme],
                         max_height: {{ $getMaxHeight() }},
                         min_height: {{ $getMinHeight() }},
                         menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
