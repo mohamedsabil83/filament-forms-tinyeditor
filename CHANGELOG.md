@@ -2,6 +2,14 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.0.3 - 2023-09-09
+
+### What's Changed
+
+- [fix] Editor disappear in some situations.
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.0.2...v2.0.3
+
 ## v2.0.2 - 2023-09-07
 
 [fix] Default value when dark mode disabled
