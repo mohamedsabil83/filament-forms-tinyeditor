@@ -332,7 +332,12 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
     public function getCustomConfigs(): string
     {
         if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs')) {
-            return '...'.json_encode(config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs'));
+
+            $jsonString = json_encode(config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs'));
+            // Replace double quotes with single quotes
+            $jsonString = str_replace('"', "'", $jsonString);
+
+            return '...'.$jsonString;
         }
 
         return '';
