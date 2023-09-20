@@ -2,6 +2,19 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.0.4 - 2023-09-20
+
+### What's Changed
+
+- Bump actions/checkout from 3 to 4 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/95
+- allow using external plugins by @Saifallak in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/97
+
+### New Contributors
+
+- @Saifallak made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/97
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.0.3...v2.0.4
+
 ## v2.0.3 - 2023-09-09
 
 ### What's Changed
