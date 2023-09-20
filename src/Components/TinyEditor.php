@@ -22,7 +22,8 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     protected int $minHeight = 0;
 
-    protected string $plugins;
+    // TinyMCE var: external_plugins
+    protected array $externalPlugins;
 
     protected string $profile = 'default';
 
@@ -74,7 +75,7 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     public function getFileAttachmentsDirectory(): ?string
     {
-        return filled($directory = $this->evaluate($this->fileAttachmentsDirectory)) ? $directory : config('filament-forms-tinyeditor.profiles.'.$this->profile.'.upload_directory');
+        return filled($directory = $this->evaluate($this->fileAttachmentsDirectory)) ? $directory : config('filament-forms-tinyeditor.profiles.' . $this->profile . '.upload_directory');
     }
 
     public function getInterfaceLanguage(): string
@@ -205,11 +206,23 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
             return 'autoresize directionality emoticons link wordcount';
         }
 
-        if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins')) {
-            return config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins');
+        if (config('filament-forms-tinyeditor.profiles.' . $this->profile . '.plugins')) {
+            return config('filament-forms-tinyeditor.profiles.' . $this->profile . '.plugins');
         }
 
         return 'advlist codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount';
+    }
+
+    public function getExternalPlugins(): array
+    {
+        return $this->externalPlugins ?? [];
+    }
+
+    public function setExternalPlugins(array $plugins): static
+    {
+        $this->externalPlugins = $plugins;
+
+        return $this;
     }
 
     public function getShowMenuBar(): bool
@@ -223,8 +236,8 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
             return 'removeformat | bold italic | rtl ltr | link emoticons';
         }
 
-        if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.toolbar')) {
-            return config('filament-forms-tinyeditor.profiles.'.$this->profile.'.toolbar');
+        if (config('filament-forms-tinyeditor.profiles.' . $this->profile . '.toolbar')) {
+            return config('filament-forms-tinyeditor.profiles.' . $this->profile . '.toolbar');
         }
 
         return 'undo redo removeformat | formatselect fontsizeselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen';
@@ -246,7 +259,7 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     public function isSimple(): bool
     {
-        return (bool) $this->evaluate($this->isSimple);
+        return (bool)$this->evaluate($this->isSimple);
     }
 
     public function language(string $language): static
@@ -326,13 +339,13 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
             return json_encode([]);
         }
 
-        return json_encode(config('filament-forms-tinyeditor.templates.'.$this->template, []));
+        return json_encode(config('filament-forms-tinyeditor.templates.' . $this->template, []));
     }
 
     public function getCustomConfigs(): string
     {
-        if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs')) {
-            return '...'.json_encode(config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs'));
+        if (config('filament-forms-tinyeditor.profiles.' . $this->profile . '.custom_configs')) {
+            return '...' . json_encode(config('filament-forms-tinyeditor.profiles.' . $this->profile . '.custom_configs'));
         }
 
         return '';

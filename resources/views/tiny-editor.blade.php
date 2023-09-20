@@ -23,6 +23,7 @@
                     min_height: {{ $getMinHeight() }},
                     menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
                     plugins: ['{{ $getPlugins() }}'],
+                    external_plugins: @js($getExternalPlugins()),
                     toolbar: '{{ $getToolbar() }}',
                     toolbar_mode: 'sliding',
                     relative_urls: {{ $getRelativeUrls() ? 'true' : 'false' }},
