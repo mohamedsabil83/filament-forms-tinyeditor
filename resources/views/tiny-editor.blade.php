@@ -62,12 +62,12 @@
                         })
 
                         editor.on('OpenWindow', function(e) {
-                            target = e.target.container.closest('.filament-modal')
+                            target = e.target.container.closest('.fi-modal')
                             if (target) target.setAttribute('x-trap.noscroll', 'false')
                         })
 
                         editor.on('CloseWindow', function(e) {
-                            target = e.target.container.closest('.filament-modal')
+                            target = e.target.container.closest('.fi-modal')
                             if (target) target.setAttribute('x-trap.noscroll', 'isOpen')
                         })
 
