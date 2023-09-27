@@ -2,6 +2,14 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.0.5 - 2023-09-27
+
+### What's Changed
+
+- [fix] filament-modal renamed to fi-modal in v3 by @mohamedsabil83 in https://github.com/mohamedsabil83/filament-forms-tinyeditor/commit/5261e3add8e5769df8d8a487788594ab626ec3b5
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.0.4...v2.0.5
+
 ## v2.0.4 - 2023-09-20
 
 ### What's Changed
