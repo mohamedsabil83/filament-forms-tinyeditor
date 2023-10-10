@@ -29,7 +29,7 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     protected string $toolbar;
 
-    protected string $language;
+    protected string|\Closure $language;
 
     protected bool $toolbarSticky = false;
 
@@ -80,7 +80,7 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     public function getInterfaceLanguage(): string
     {
-        return match ($this->language) {
+        return match ($this->evaluate($this->language)) {
             'ar' => 'ar',
             'az' => 'az',
             'bg' => 'bg_BG',
@@ -262,7 +262,7 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
         return (bool) $this->evaluate($this->isSimple);
     }
 
-    public function language(string $language): static
+    public function language(string|\Closure $language): static
     {
         $this->language = $language;
 
