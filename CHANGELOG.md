@@ -2,6 +2,15 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.0.6 - 2023-10-10
+
+### What's Changed
+
+- Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/102
+- Evaluate interface language by @mohamedsabil83 in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/104
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.0.5...v2.0.6
+
 ## v2.0.5 - 2023-09-27
 
 ### What's Changed
