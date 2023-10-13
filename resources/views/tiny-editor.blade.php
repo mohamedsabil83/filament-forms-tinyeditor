@@ -49,7 +49,10 @@
                         if(!window.tinySettingsCopy) {
                             window.tinySettingsCopy = [];
                         }
-                        window.tinySettingsCopy.push(editor.settings);
+
+                        if (!window.tinySettingsCopy.some(obj => obj.id === editor.settings.id)) {
+                            window.tinySettingsCopy.push(editor.settings);
+                        }
 
                         editor.on('blur', function(e) {
                             state = editor.getContent()
