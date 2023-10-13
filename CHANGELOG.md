@@ -2,6 +2,18 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.0.7 - 2023-10-13
+
+### What's Changed
+
+- Fix initialisation of deleted editors by @chosten in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/105
+
+### New Contributors
+
+- @chosten made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/105
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.0.6...v2.0.7
+
 ## v2.0.6 - 2023-10-10
 
 ### What's Changed
