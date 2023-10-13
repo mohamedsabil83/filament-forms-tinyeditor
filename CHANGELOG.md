@@ -2,6 +2,14 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.0.8 - 2023-10-13
+
+### What's Changed
+
+- Fix PR #105 by @chosten in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/106
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.0.7...v2.0.8
+
 ## v2.0.7 - 2023-10-13
 
 ### What's Changed
