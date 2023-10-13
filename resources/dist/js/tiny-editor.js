@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     const removeEditors = debounce(() => {
-        window.tinySettingsCopy = window.tinySettingsCopy.filter((obj) => document.getElementById(obj.id));
         window.tinySettingsCopy.forEach(i => tinymce.execCommand('mceRemoveEditor', false, i.target.id));
     }, 50);
 
     const reinitializeEditors = debounce(() => {
+        window.tinySettingsCopy = window.tinySettingsCopy.filter(obj => document.getElementById(obj.id));
         window.tinySettingsCopy.forEach(settings => tinymce.init(settings))
     });
 
