@@ -10,6 +10,7 @@
             $nextTick(() => {
                 tinymce.createEditor('tiny-editor-{{ $getId() }}', {
                     target: $refs.tinymce,
+                    deprecation_warnings: false,
                     language: '{{ $getInterfaceLanguage() }}',
                     language_url: 'https://cdn.jsdelivr.net/npm/tinymce-i18n@23.7.24/langs5/{{ $getInterfaceLanguage() }}.min.js',
                     toolbar_sticky: {{ $getToolbarSticky() ? 'true' : 'false' }},
