@@ -2,6 +2,14 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.0.9 - 2023-10-15
+
+### What's Changed
+
+- Hide deprecation warnings from console by @mohamedsabil83 in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/107
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.0.8...v2.0.9
+
 ## v2.0.8 - 2023-10-13
 
 ### What's Changed
