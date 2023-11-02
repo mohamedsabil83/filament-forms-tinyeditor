@@ -110,6 +110,7 @@
             }
         })()"
         x-cloak
+        class="overflow-hidden"
         wire:ignore
     >
         @unless($isDisabled())
