@@ -2,6 +2,12 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.0.10 - 2023-11-02
+
+- Fix width in Apple devices
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.0.9...v2.0.10
+
 ## v2.0.9 - 2023-10-15
 
 ### What's Changed
