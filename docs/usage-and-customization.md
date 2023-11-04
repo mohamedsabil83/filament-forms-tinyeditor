@@ -128,7 +128,7 @@ TinyEditor::make('content')->showMenuBar()
 To sticky the menubar of the editor, use the `->toolbarSticky()` method:
 
 ```php
-TinyEditor::make('content')->toolbarSticky()
+TinyEditor::make('content')->toolbarSticky(true)
 ```
 
 ### **Localization**
