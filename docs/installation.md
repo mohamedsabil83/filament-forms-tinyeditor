@@ -22,6 +22,11 @@ Optionally, you can publish the config file for [Customization](./usage-and-cust
 php artisan vendor:publish --tag="filament-forms-tinyeditor-config"
 ```
 
+You may need to run Artisan storage:link command to see the images stored
+```bash
+php artisan storage:link
+```
+
 ## Upgrade
 
 Like installation, you don't have to do anything more after upgrade unless you work using **Forms standalone**. In that case, you need to run the following command:
