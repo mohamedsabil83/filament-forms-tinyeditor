@@ -22,6 +22,10 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     protected int $minHeight = 0;
 
+    protected int $previewMaxHeight = 0;
+
+    protected int $previewMinHeight = 0;
+
     // TinyMCE var: external_plugins
     protected array $externalPlugins;
 
@@ -71,6 +75,16 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
     public function getMinHeight(): int
     {
         return $this->minHeight;
+    }
+
+    public function getPreviewMaxHeight(): int
+    {
+        return $this->previewMaxHeight;
+    }
+
+    public function getPreviewMinHeight(): int
+    {
+        return $this->previewMinHeight;
     }
 
     public function getFileAttachmentsDirectory(): ?string
@@ -253,6 +267,20 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
     public function minHeight(int $minHeight): static
     {
         $this->minHeight = $minHeight;
+
+        return $this;
+    }
+
+    public function previewMaxHeight(int $previewMaxHeight): static
+    {
+        $this->previewMaxHeight = $previewMaxHeight;
+
+        return $this;
+    }
+
+    public function previewMinHeight(int $previewMinHeight): static
+    {
+        $this->previewMinHeight = $previewMinHeight;
 
         return $this;
     }
