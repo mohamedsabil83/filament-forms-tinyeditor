@@ -2,6 +2,20 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.1.0 - 2023-11-14
+
+### What's Changed
+
+- Update usage and installation md files by @majdghithan in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/110
+- Added $previewMaxHeight() and $previewMinHeight() to the disabled view by @poldixd in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/112
+
+### New Contributors
+
+- @majdghithan made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/110
+- @poldixd made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/112
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.0.10...v2.1.0
+
 ## v2.0.10 - 2023-11-02
 
 - Fix width in Apple devices
