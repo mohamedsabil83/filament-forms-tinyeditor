@@ -149,6 +149,7 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
             'uk' => 'uk',
             'vi' => 'vi',
             'zh' => 'zh_CN',
+            'zh_TW' => 'zh_TW',
             default => 'en',
         };
     }
@@ -210,6 +211,7 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
             'uk' => 'tinymce-lang-uk',
             'vi' => 'tinymce-lang-vi',
             'zh' => 'tinymce-lang-zh_CN',
+            'zh_TW' => 'tinymce-lang-zh_TW',
             default => 'tinymce',
         };
     }
