@@ -2,6 +2,18 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.1.1 - 2023-12-12
+
+### What's Changed
+
+* Add support for Traditional Chinese in TinyEditor by @haosheng0211 in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/114
+
+### New Contributors
+
+* @haosheng0211 made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/114
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.1.0...v2.1.1
+
 ## v2.1.0 - 2023-11-14
 
 ### What's Changed
