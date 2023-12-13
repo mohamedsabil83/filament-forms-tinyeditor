@@ -2,6 +2,18 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.2.0 - 2023-12-13
+
+### What's Changed
+
+* feat: enable file uploads on links and media by @brendoLoR in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/115
+
+### New Contributors
+
+* @brendoLoR made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/115
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.1.1...v2.2.0
+
 ## v2.1.1 - 2023-12-12
 
 ### What's Changed
