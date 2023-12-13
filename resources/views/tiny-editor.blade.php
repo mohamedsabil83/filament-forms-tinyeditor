@@ -44,6 +44,29 @@
                             })
                         })
                     },
+                    file_picker_callback: (cb, value, meta) => {
+                        const input = document.createElement('input');
+                        input.setAttribute('type', 'file');
+                        input.addEventListener('change', (e) => {
+                            const file = e.target.files[0];
+                            const reader = new FileReader();
+                            reader.addEventListener('load', () => {
+                                console.log('{{ $getStatePath() }}')
+                                $wire.upload(`componentFileAttachments.{{ $getStatePath() }}`, file, () => {
+                                    $wire.getFormComponentFileAttachmentUrl('{{ $getStatePath() }}').then((url) => {
+                                        if (!url) {
+                                            cb('{{ __('Error uploading file') }}')
+                                            return
+                                        }
+                                        cb(url)
+                                    })
+                                })
+                            });
+                            reader.readAsDataURL(file);
+                        });
+
+                        input.click();
+                    },
                     automatic_uploads: true,
                     templates: {{ $getTemplate() }},
                     setup: function(editor) {
