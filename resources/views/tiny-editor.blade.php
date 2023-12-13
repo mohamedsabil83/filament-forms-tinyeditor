@@ -51,7 +51,6 @@
                             const file = e.target.files[0];
                             const reader = new FileReader();
                             reader.addEventListener('load', () => {
-                                console.log('{{ $getStatePath() }}')
                                 $wire.upload(`componentFileAttachments.{{ $getStatePath() }}`, file, () => {
                                     $wire.getFormComponentFileAttachmentUrl('{{ $getStatePath() }}').then((url) => {
                                         if (!url) {
