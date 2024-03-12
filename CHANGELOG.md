@@ -2,6 +2,16 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.3.0 - 2024-03-12
+
+### What's Changed
+
+* Support Laravel 11.x
+* Bump aglipanci/laravel-pint-action from 2.3.0 to 2.3.1 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/116
+* Bump ramsey/composer-install from 2 to 3 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/120
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.2.0...v2.3.0
+
 ## v2.2.0 - 2023-12-13
 
 ### What's Changed
