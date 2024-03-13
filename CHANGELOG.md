@@ -2,6 +2,14 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.3.1 - 2024-03-13
+
+### What's Changed
+
+* [fix]: Focus conflict when using editor inside Jetstream modal
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.3.0...v2.3.1
+
 ## v2.3.0 - 2024-03-12
 
 ### What's Changed
