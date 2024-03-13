@@ -90,11 +90,23 @@
                         editor.on('OpenWindow', function(e) {
                             target = e.target.container.closest('.fi-modal')
                             if (target) target.setAttribute('x-trap.noscroll', 'false')
+
+                            target = e.target.container.closest('.jetstream-modal')
+                            if (target) {
+                                targetDiv = target.children[1]
+                                targetDiv.setAttribute('x-trap.inert.noscroll', 'false')
+                            }
                         })
 
                         editor.on('CloseWindow', function(e) {
                             target = e.target.container.closest('.fi-modal')
                             if (target) target.setAttribute('x-trap.noscroll', 'isOpen')
+
+                            target = e.target.container.closest('.jetstream-modal')
+                            if (target) {
+                                targetDiv = target.children[1]
+                                targetDiv.setAttribute('x-trap.inert.noscroll', 'show')
+                            }
                         })
 
                         function putCursorToEnd() {
