@@ -20,6 +20,11 @@
                         dark: 'oxide-dark',
                         system: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : 'oxide',
                     }[typeof theme === 'undefined' ? 'light' : theme],
+                    content_css: {
+                        light: 'default',
+                        dark: 'dark',
+                        system: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default',
+                    }[typeof theme === 'undefined' ? 'light' : theme],
                     max_height: {{ $getMaxHeight() }},
                     min_height: {{ $getMinHeight() }},
                     menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
