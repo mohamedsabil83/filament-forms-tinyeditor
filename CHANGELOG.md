@@ -2,6 +2,19 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.3.2 - 2024-03-28
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 1.6.0 to 2.0.0 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/122
+* Apply theme to content_css by @Pindagus in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/125
+
+### New Contributors
+
+* @Pindagus made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/125
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.3.1...v2.3.2
+
 ## v2.3.1 - 2024-03-13
 
 ### What's Changed
