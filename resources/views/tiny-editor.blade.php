@@ -32,6 +32,7 @@
                     external_plugins: @js($getExternalPlugins()),
                     toolbar: '{{ $getToolbar() }}',
                     toolbar_mode: 'sliding',
+                    document_base_url: '{{ $getDocumentBaseUrl() }}',
                     relative_urls: {{ $getRelativeUrls() ? 'true' : 'false' }},
                     remove_script_host: {{ $getRemoveScriptHost() ? 'true' : 'false' }},
                     convert_urls: {{ $getConvertUrls() ? 'true' : 'false' }},
