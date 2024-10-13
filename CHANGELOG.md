@@ -2,6 +2,21 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.3.3 - 2024-10-13
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/126
+* Bump dependabot/fetch-metadata from 2.0.0 to 2.1.0 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/127
+* Bump dependabot/fetch-metadata from 2.1.0 to 2.2.0 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/130
+* TinyMCE var: document_base_url added by @hammadzafar05 in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/136
+
+### New Contributors
+
+* @hammadzafar05 made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/136
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.3.2...v2.3.3
+
 ## v2.3.2 - 2024-03-28
 
 ### What's Changed
