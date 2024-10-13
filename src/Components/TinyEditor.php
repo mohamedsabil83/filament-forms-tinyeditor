@@ -37,6 +37,9 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     protected bool $toolbarSticky = false;
 
+    // TinyMCE var: document_base_url
+    protected ?string $documentBaseUrl = '';
+
     // TinyMCE var: relative_urls
     protected bool $relativeUrls = true;
 
@@ -316,6 +319,18 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
     public function simple(bool|callable $condition = true): static
     {
         $this->isSimple = $condition;
+
+        return $this;
+    }
+
+    public function getDocumentBaseUrl(): ?string
+    {
+        return $this->documentBaseUrl;
+    }
+
+    public function documentBaseUrl(string $documentBaseUrl): static
+    {
+        $this->documentBaseUrl = $documentBaseUrl;
 
         return $this;
     }
