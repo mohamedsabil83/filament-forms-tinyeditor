@@ -1,6 +1,7 @@
 {
     "name": "mohamedsabil83/filament-forms-tinyeditor",
     "description": "A TinyMce editor component for Filament",
+    "license": "MIT",
     "keywords": [
         "laravel",
         "filament",
@@ -8,8 +9,6 @@
         "tinyeditor",
         "tinymce"
     ],
-    "homepage": "https://github.com/mohamedsabil83/filament-forms-tinyeditor",
-    "license": "MIT",
     "authors": [
         {
             "name": "MohamedSabil83",
@@ -17,25 +16,28 @@
             "role": "Developer"
         }
     ],
+    "homepage": "https://github.com/mohamedsabil83/filament-forms-tinyeditor",
     "require": {
         "php": "^8.1",
         "filament/forms": "^3.0",
-        "illuminate/contracts": "^9.0|^10.0|^11.0",
+        "illuminate/contracts": "^9.0 || ^10.0 || ^11.0 || ^12.0",
         "spatie/laravel-package-tools": "^1.14.0"
     },
     "require-dev": {
         "larastan/larastan": "^2.2",
         "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^7.0|^8.0",
-        "orchestra/testbench": "8.0|^9.0",
+        "nunomaduro/collision": "^7.0 || ^8.0",
+        "orchestra/testbench": "8.0 || ^9.0 || ^10.0",
         "pestphp/pest": "^2.0",
         "pestphp/pest-plugin-laravel": "^2.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
-        "phpunit/phpunit": "^10.0|^11.0",
+        "phpunit/phpunit": "^10.0 || ^11.0 || ^12.0",
         "spatie/laravel-ray": "^1.26"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Mohamedsabil83\\FilamentFormsTinyeditor\\": "src"
@@ -46,19 +48,12 @@
             "Mohamedsabil83\\FilamentFormsTinyeditor\\Tests\\": "tests"
         }
     },
-    "scripts": {
-        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint"
-    },
     "config": {
-        "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "phpstan/extension-installer": true
-        }
+        },
+        "sort-packages": true
     },
     "extra": {
         "laravel": {
@@ -67,6 +62,11 @@
             ]
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    }
 }
