@@ -2,6 +2,20 @@
 
 All notable changes to `filament-forms-tinyeditor` will be documented in this file.
 
+## v2.4.0 - 2025-02-26
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/140
+* Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/141
+* Add Laravel 12 Support by @sweptsquash in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/142
+
+### New Contributors
+
+* @sweptsquash made their first contribution in https://github.com/mohamedsabil83/filament-forms-tinyeditor/pull/142
+
+**Full Changelog**: https://github.com/mohamedsabil83/filament-forms-tinyeditor/compare/v2.3.3...v2.4.0
+
 ## v2.3.3 - 2024-10-13
 
 ### What's Changed
