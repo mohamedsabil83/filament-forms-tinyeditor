@@ -7,6 +7,17 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/mohamedsabil83/filament-forms-tinyeditor/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/mohamedsabil83/filament-forms-tinyeditor/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/mohamedsabil83/filament-forms-tinyeditor.svg?style=flat-square)](https://packagist.org/packages/mohamedsabil83/filament-forms-tinyeditor)
 
+
+> [!WARNING]
+> **Deprecation Notice**  
+> This project is no longer actively maintained.  
+> While you’re welcome to explore, fork, and learn from the code, please note that no further updates, bug fixes, or feature additions will be made.  
+>  
+> Please consider using [amidesfahani/filament-tinyeditor](https://github.com/amidesfahani/filament-tinyeditor) for an actively supported option.  
+>  
+> _Thank you for your interest and for being part of this project’s journey._ ✨
+
+
 Filament Forms TinyEditor is a package for [Laravel Filament](https://github.com/laravel-filament/filament) that wraps [TinyMce Editor](https://www.tiny.cloud) into a usable component. It's works with [Filament Forms](https://filamentadmin.com/docs/2.x/forms/installation) standalone too.
 
 |             Light mode             |               Dark mode                |
